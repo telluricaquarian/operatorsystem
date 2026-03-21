@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@font-face {
+  font-family: 'Redaction';
+  src: url('/RedactionItalic-lgB8w.otf') format('opentype');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -79,6 +87,7 @@
 @theme inline {
   --font-sans: 'Geist', 'Geist Fallback';
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-redaction: 'Redaction', Georgia, serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -127,7 +136,32 @@
   }
 }
 
+@keyframes liquid-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 @layer utilities {
+  .hero-gradient-text {
+    background: linear-gradient(
+      135deg,
+      #1a0c04 0%,
+      #6b2a08 18%,
+      #c85d1e 36%,
+      #e8892a 50%,
+      #c85d1e 64%,
+      #6b2a08 82%,
+      #1a0c04 100%
+    );
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: liquid-drift 10s ease-in-out infinite;
+  }
+
   .glow-sm {
     box-shadow: 0 0 10px -2px var(--glow);
   }
