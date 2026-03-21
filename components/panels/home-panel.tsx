@@ -48,6 +48,24 @@ export function HomePanel() {
         />
       </div>
 
+      {/* Quote block */}
+      <div className="mt-12 max-w-3xl">
+        <div
+          className="px-5 py-3"
+          style={{ backgroundColor: '#F5E642' }}
+        >
+          <p
+            className="text-sm font-semibold text-black md:text-base"
+            style={{ color: '#000000' }}
+          >
+            &ldquo;You will get rich by giving society what it wants but does not yet know how to get. At scale.&rdquo;
+          </p>
+        </div>
+        <p className="mt-2.5 text-xs text-muted-foreground">
+          — Naval Ravikant
+        </p>
+      </div>
+
     </div>
   )
 }
