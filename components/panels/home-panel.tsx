@@ -10,7 +10,7 @@ export function HomePanel() {
       {/* Badge */}
       <div className="mb-7 inline-flex items-center gap-2.5 self-start rounded-full border border-primary/30 bg-background px-4 py-2 glow-sm">
         <Wrench className="size-3.5 text-white shrink-0" />
-        <span className="text-sm font-medium italic text-muted-foreground tracking-wide">
+        <span className="text-sm font-medium not-italic text-muted-foreground tracking-wide" style={{ fontStyle: 'normal' }}>
           <span className="hidden sm:inline">Tech Savvy Builders Guild - Upper Echelon</span>
           <span className="sm:hidden">Tech-savvy Builders Guild</span>
         </span>
