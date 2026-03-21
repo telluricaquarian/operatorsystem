@@ -8,6 +8,7 @@ import { TerminalPanel } from '@/components/terminal/terminal-panel'
 import { ProjectsPanel } from '@/components/panels/projects-panel'
 import { HistoryPanel } from '@/components/panels/history-panel'
 import { TemplatesPanel } from '@/components/panels/templates-panel'
+import { HomePanel } from '@/components/panels/home-panel'
 import { SopsPanel } from '@/components/panels/sops-panel'
 import { AgenticFlowsPanel } from '@/components/panels/agentic-flows-panel'
 
@@ -20,6 +21,8 @@ export default function Home() {
 
   const renderPanel = () => {
     switch (activePanel) {
+      case 'home':
+        return <HomePanel />
       case 'terminal':
         return <TerminalPanel />
       case 'projects':

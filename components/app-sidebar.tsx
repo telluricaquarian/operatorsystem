@@ -1,6 +1,7 @@
 'use client'
 
 import {
+  House,
   Terminal,
   FolderKanban,
   History,
@@ -27,6 +28,11 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
+  {
+    title: 'Home',
+    icon: House,
+    id: 'home',
+  },
   {
     title: 'Terminal',
     icon: Terminal,
