@@ -1,13 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@font-face {
-  font-family: 'Redaction';
-  src: url('/RedactionItalic-lgB8w.otf') format('opentype');
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -87,7 +80,7 @@
 @theme inline {
   --font-sans: 'Geist', 'Geist Fallback';
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
-  --font-redaction: 'Redaction', Georgia, serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
