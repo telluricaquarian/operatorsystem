@@ -27,7 +27,7 @@ export function HomePanel() {
           maxWidth: '1305px',
         }}
       >
-        Polymathic Excellence, Absolute Competence
+        Polymathic Excellence , Absolute Competence & Atelier Quality
       </h1>
 
       {/* Supporting sentence */}
