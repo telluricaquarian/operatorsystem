@@ -180,21 +180,48 @@ export const mockProjects: Project[] = [
     id: '1',
     name: 'Acme Website Redesign',
     type: 'proposal',
-    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 2), // 2 hours ago
+    tags: ['Proposal'],
+    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 2),
     outputs: [],
   },
   {
     id: '2',
     name: 'SaaS Landing Page',
     type: 'landing-page',
-    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24), // 1 day ago
+    tags: ['Landing Page'],
+    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24),
     outputs: [],
   },
   {
     id: '3',
     name: 'Growth System Launch',
     type: 'offer-stack',
-    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3), // 3 days ago
+    tags: ['Offer Stack'],
+    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3),
+    outputs: [],
+  },
+  {
+    id: '4',
+    name: 'IdeationStation',
+    type: 'generic',
+    tags: ['Research Terminal'],
+    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24 * 5),
+    outputs: [],
+  },
+  {
+    id: '5',
+    name: 'AvantSavant',
+    type: 'generic',
+    tags: ['Education Platform'],
+    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24 * 7),
+    outputs: [],
+  },
+  {
+    id: '6',
+    name: 'Negentropic Workflows',
+    type: 'generic',
+    tags: ['Agentic System', 'Workflow'],
+    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24 * 10),
     outputs: [],
   },
 ]

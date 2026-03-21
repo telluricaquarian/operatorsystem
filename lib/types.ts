@@ -81,6 +81,7 @@ export interface Project {
   id: string
   name: string
   type: OutputType
+  tags: string[]
   lastUpdated: Date
   outputs: OutputItem[]
 }
