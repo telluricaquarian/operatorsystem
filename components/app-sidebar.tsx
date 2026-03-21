@@ -8,6 +8,7 @@ import {
   LayoutTemplate,
   BookOpen,
   Workflow,
+  Briefcase,
   Settings,
   ChevronLeft,
 } from 'lucide-react'
@@ -65,6 +66,14 @@ const menuItems = [
   },
 ]
 
+const coreItems = [
+  {
+    title: 'Service Delivery',
+    icon: Briefcase,
+    id: 'service-delivery',
+  },
+]
+
 interface AppSidebarProps {
   activePanel: string
   onPanelChange: (panel: string) => void
@@ -98,6 +107,32 @@ export function AppSidebar({ activePanel, onPanelChange }: AppSidebarProps) {
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
+                <SidebarMenuItem key={item.id}>
+                  <SidebarMenuButton
+                    isActive={activePanel === item.id}
+                    onClick={() => onPanelChange(item.id)}
+                    tooltip={item.title}
+                    className={cn(
+                      'transition-all',
+                      activePanel === item.id &&
+                        'bg-sidebar-accent text-sidebar-accent-foreground',
+                    )}
+                  >
+                    <item.icon className="size-4" />
+                    <span>{item.title}</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-muted-foreground/70 uppercase text-[10px] tracking-widest">
+            Core
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {coreItems.map((item) => (
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton
                     isActive={activePanel === item.id}
