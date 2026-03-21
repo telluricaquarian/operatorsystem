@@ -48,6 +48,19 @@ export function ProjectsPanel() {
                   <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
                 </>
               )}
+              {project.name === 'Negentropic Workflows' && (
+                <>
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src="/negentropicbackground.png"
+                      alt="Negentropic background"
+                      className="w-full h-full object-cover blur-[1.5px] scale-105 brightness-75 contrast-110 transition-all duration-500"
+                    />
+                  </div>
+                  <div className="absolute inset-0 z-10 bg-black/20" />
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
+                </>
+              )}
               <div className="relative z-20">
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between">
