@@ -48,6 +48,42 @@ export function HomePanel() {
         />
       </div>
 
+      {/* Image marquee — desktop only */}
+      <div className="hidden lg:block mt-16 -mx-8 md:-mx-14">
+        <div className="relative overflow-hidden py-2">
+          {/* Left edge fade */}
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-36"
+            style={{ background: 'linear-gradient(to right, var(--background) 0%, transparent 100%)' }}
+          />
+          {/* Right edge fade */}
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-36"
+            style={{ background: 'linear-gradient(to left, var(--background) 0%, transparent 100%)' }}
+          />
+          {/* Scrolling track — 6 items (3 × 2) for seamless -50% loop */}
+          <div className="animate-marquee flex w-max">
+            {[
+              { src: '/design.png',     alt: 'Design showcase',      dupe: false },
+              { src: '/internalos.png', alt: 'Internal OS showcase', dupe: false },
+              { src: '/aarec.png',      alt: 'Aarec showcase',       dupe: false },
+              { src: '/design.png',     alt: '',                     dupe: true  },
+              { src: '/internalos.png', alt: '',                     dupe: true  },
+              { src: '/aarec.png',      alt: '',                     dupe: true  },
+            ].map((img, i) => (
+              <img
+                key={i}
+                src={img.src}
+                alt={img.alt}
+                aria-hidden={img.dupe}
+                className="rounded-xl object-cover shrink-0"
+                style={{ width: '340px', height: '220px', objectFit: 'cover', marginRight: '20px' }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Quote block */}
       <div className="mt-12 max-w-3xl">
         <div
