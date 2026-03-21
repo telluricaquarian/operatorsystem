@@ -41,10 +41,11 @@ export function ProjectsPanel() {
                     <img
                       src="/avantbackground.png"
                       alt="AvantSavant background"
-                      className="w-full h-full object-cover blur-[2px] scale-105"
+                      className="w-full h-full object-cover blur-[1.5px] scale-105 brightness-75 contrast-110 transition-all duration-500"
                     />
                   </div>
-                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/50 to-black/20" />
+                  <div className="absolute inset-0 z-10 bg-black/20" />
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
                 </>
               )}
               <div className="relative z-20">
@@ -54,7 +55,12 @@ export function ProjectsPanel() {
                       <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
                         <FolderKanban className="size-5 text-primary" />
                       </div>
-                      <CardTitle className="text-base">{project.name}</CardTitle>
+                      <CardTitle
+                        className="text-base"
+                        style={project.name === 'AvantSavant' ? { filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.8))' } : undefined}
+                      >
+                        {project.name}
+                      </CardTitle>
                     </div>
                     <Button variant="ghost" size="icon" className="size-8 shrink-0">
                       <MoreVertical className="size-4" />
@@ -69,7 +75,11 @@ export function ProjectsPanel() {
                         <Badge
                           key={tag}
                           variant="outline"
-                          className="text-xs rounded-full border-border/60 text-muted-foreground"
+                          className={
+                            project.name === 'AvantSavant'
+                              ? 'text-xs rounded-full border-orange-500/40 text-orange-400 bg-orange-500/5'
+                              : 'text-xs rounded-full border-border/60 text-muted-foreground'
+                          }
                         >
                           {tag}
                         </Badge>
