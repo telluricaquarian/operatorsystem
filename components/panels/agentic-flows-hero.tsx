@@ -63,79 +63,79 @@ export function AgenticFlowsHero() {
 
         {/* Node chain */}
         <div className="flex-1 flex items-center">
-          <div className="flex items-center w-full overflow-x-auto pb-1">
-            {nodes.map((node, i) => (
-              <div key={node.id} className="flex items-center shrink-0 flex-1 min-w-0">
+          {/*
+            Position-relative wrapper.
+            The continuous line and moving dot are absolute children that span
+            the full width. Node cards sit on top (z-index 1) and naturally
+            mask the line where it passes beneath them — giving the appearance
+            of a single connected system path.
+          */}
+          <div className="relative flex w-full" style={{ alignItems: 'flex-start' }}>
 
-                {/* Node card — fully static */}
-                <div className="flex flex-col items-center flex-1">
-                  <div
-                    className="w-full max-w-[140px] rounded-xl border border-primary/25 px-4 py-4 flex flex-col items-center gap-1"
-                    style={{
-                      background: 'oklch(0.13 0 0)',
-                      boxShadow: 'inset 0 1px 0 oklch(0.75 0.15 45 / 0.06)',
-                    }}
-                  >
-                    <span className="text-[11px] font-bold tracking-[0.18em] text-primary">
-                      {node.label}
-                    </span>
-                    <div className="h-px w-8 bg-border/60 my-0.5" />
-                    <span className="text-[11px] font-medium text-foreground/80 text-center">
-                      {node.sub}
-                    </span>
-                    <span className="text-[10px] text-muted-foreground/50 text-center">
-                      {node.detail}
-                    </span>
-                  </div>
-                  <span className="mt-2 text-[9px] text-muted-foreground/35 tracking-widest uppercase">
-                    Step {String(i + 1).padStart(2, '0')}
+            {/* ── Continuous background line ── */}
+            <div
+              className="pointer-events-none"
+              style={{
+                position: 'absolute',
+                /* Align with the vertical center of the cards.
+                   Cards are py-4 + ~54px content ≈ 86px tall.
+                   Card center ≈ 43px from top of node column. */
+                top: '43px',
+                left: '12.5%',
+                right: '12.5%',
+                height: '2px',
+                background:
+                  'linear-gradient(to right, transparent 0%, oklch(0.75 0.15 45 / 0.3) 8%, oklch(0.75 0.15 45 / 0.3) 92%, transparent 100%)',
+                zIndex: 0,
+              }}
+            />
+
+            {/* ── Single traveling orange dot ── */}
+            <div
+              className="animate-dot-flow pointer-events-none"
+              style={{
+                position: 'absolute',
+                top: '43px',
+                marginTop: '-3.5px',  /* vertically center the 7px dot on the 2px line */
+                width: '7px',
+                height: '7px',
+                borderRadius: '50%',
+                background: 'oklch(0.75 0.15 45)',
+                boxShadow: '0 0 8px 3px oklch(0.75 0.15 45 / 0.55)',
+                zIndex: 10,
+              }}
+            />
+
+            {/* ── Node cards ── */}
+            {nodes.map((node, i) => (
+              <div
+                key={node.id}
+                className="flex flex-col items-center"
+                style={{ flex: 1, position: 'relative', zIndex: 1 }}
+              >
+                {/* Card — static, no animation */}
+                <div
+                  className="w-full max-w-[140px] rounded-xl border border-primary/25 px-4 py-4 flex flex-col items-center gap-1"
+                  style={{
+                    background: 'oklch(0.13 0 0)',
+                    boxShadow: 'inset 0 1px 0 oklch(0.75 0.15 45 / 0.06)',
+                  }}
+                >
+                  <span className="text-[11px] font-bold tracking-[0.18em] text-primary">
+                    {node.label}
+                  </span>
+                  <div className="h-px w-8 bg-border/60 my-0.5" />
+                  <span className="text-[11px] font-medium text-foreground/80 text-center">
+                    {node.sub}
+                  </span>
+                  <span className="text-[10px] text-muted-foreground/50 text-center">
+                    {node.detail}
                   </span>
                 </div>
-
-                {/* Connector with traveling dot */}
-                {i < nodes.length - 1 && (
-                  <div className="flex items-center px-2 shrink-0 mb-5">
-                    {/* Line + dot container */}
-                    <div style={{ position: 'relative', width: '48px', height: '2px' }}>
-                      {/* Static line */}
-                      <div
-                        style={{
-                          position: 'absolute',
-                          inset: 0,
-                          borderRadius: '9999px',
-                          background:
-                            'linear-gradient(to right, oklch(0.75 0.15 45 / 0.35), oklch(0.75 0.15 45 / 0.12))',
-                        }}
-                      />
-                      {/* Traveling orange dot */}
-                      <div
-                        className="animate-dot-flow"
-                        style={{
-                          position: 'absolute',
-                          top: '50%',
-                          left: '0px',
-                          width: '7px',
-                          height: '7px',
-                          borderRadius: '50%',
-                          background: 'oklch(0.75 0.15 45)',
-                          boxShadow: '0 0 6px 2px oklch(0.75 0.15 45 / 0.5)',
-                          animationDelay: `${i * 2}s`,
-                        }}
-                      />
-                    </div>
-                    {/* Arrowhead */}
-                    <svg
-                      width="7"
-                      height="10"
-                      viewBox="0 0 7 10"
-                      fill="none"
-                      className="shrink-0"
-                      style={{ marginLeft: '-1px', opacity: 0.4 }}
-                    >
-                      <path d="M0 0L7 5L0 10" fill="oklch(0.75 0.15 45)" />
-                    </svg>
-                  </div>
-                )}
+                {/* Step index below card */}
+                <span className="mt-2 text-[9px] text-muted-foreground/35 tracking-widest uppercase">
+                  Step {String(i + 1).padStart(2, '0')}
+                </span>
               </div>
             ))}
           </div>
