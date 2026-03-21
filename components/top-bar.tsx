@@ -7,7 +7,7 @@ import { SydneyTime } from '@/components/SydneyTime'
 
 export function TopBar() {
   return (
-    <header className="relative flex h-14 items-center justify-between border-b border-border bg-background/80 px-6 backdrop-blur-sm">
+    <header className="relative sticky top-0 z-40 flex h-14 items-center justify-between border-b border-white/10 bg-black/85 px-6 backdrop-blur-md">
       <div className="flex items-center gap-3">
         <SidebarTrigger className="md:hidden -ml-2" aria-label="Open navigation menu" />
         <h1 className="text-lg font-semibold tracking-tight">
