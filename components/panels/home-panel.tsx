@@ -52,7 +52,7 @@ export function HomePanel() {
       <div className="mt-12 max-w-3xl">
         <div
           className="px-5 py-3"
-          style={{ backgroundColor: '#F5E642' }}
+          style={{ backgroundColor: '#F5F501' }}
         >
           <p
             className="text-sm font-semibold text-black md:text-base"
