@@ -35,17 +35,53 @@ export function HomePanel() {
         Stay ahead of the curve , always strive, continuously improve, persistently study & observe and keep building.
       </p>
 
-      {/* Featured image */}
-      <div className="mt-10">
-        <Image
-          src="/aarec.png"
-          alt="aarec"
-          width={680}
-          height={460}
-          className="rounded-2xl border border-primary/20 glow-md"
-          style={{ width: '100%', maxWidth: '680px', height: 'auto' }}
-          priority
-        />
+      {/* Featured image + desktop philosophy column */}
+      <div className="mt-10 lg:flex lg:items-start lg:gap-10">
+
+        {/* Image — full width on mobile, constrained on desktop */}
+        <div className="w-full lg:w-auto lg:flex-shrink-0">
+          <Image
+            src="/aarec.png"
+            alt="aarec"
+            width={680}
+            height={460}
+            className="rounded-2xl border border-primary/20 glow-md"
+            style={{ width: '100%', maxWidth: '680px', height: 'auto' }}
+            priority
+          />
+        </div>
+
+        {/* Desktop-only: Operator Philosophy typographic stack */}
+        <div className="hidden lg:flex lg:flex-col lg:justify-start lg:pt-1 lg:min-w-0">
+
+          {/* [01] Micro label */}
+          <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground/50">
+            [01] Operator Philosophy
+          </p>
+
+          {/* Main heading */}
+          <h2 className="mb-6 text-2xl font-semibold tracking-tight text-foreground">
+            Futuristic Entrepreneurship
+          </h2>
+
+          {/* Quote — orange-tinted left border */}
+          <blockquote className="mb-2 border-l-2 border-primary/40 pl-4">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              &ldquo;The best entrepreneurs of the future will be quite skilled at 6&ndash;8 things&rdquo;
+            </p>
+          </blockquote>
+
+          {/* Attribution */}
+          <p className="mb-8 pl-4 text-xs text-muted-foreground/60">
+            — Marc Andreessen
+          </p>
+
+          {/* Skill stack */}
+          <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground/40">
+            Design / Engineering / Systems / Distribution
+          </p>
+
+        </div>
       </div>
 
       {/* Image marquee — desktop only */}
