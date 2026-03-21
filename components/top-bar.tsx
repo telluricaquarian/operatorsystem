@@ -2,11 +2,13 @@
 
 import { Circle } from 'lucide-react'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { SidebarTrigger } from '@/components/ui/sidebar'
 
 export function TopBar() {
   return (
     <header className="flex h-14 items-center justify-between border-b border-border bg-background/80 px-6 backdrop-blur-sm">
       <div className="flex items-center gap-3">
+        <SidebarTrigger className="md:hidden -ml-2" aria-label="Open navigation menu" />
         <h1 className="text-lg font-semibold tracking-tight">
           Operator Terminal
         </h1>

@@ -80,7 +80,7 @@ interface AppSidebarProps {
 }
 
 export function AppSidebar({ activePanel, onPanelChange }: AppSidebarProps) {
-  const { state, toggleSidebar } = useSidebar()
+  const { state, toggleSidebar, isMobile, setOpenMobile } = useSidebar()
 
   return (
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">
@@ -110,7 +110,7 @@ export function AppSidebar({ activePanel, onPanelChange }: AppSidebarProps) {
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton
                     isActive={activePanel === item.id}
-                    onClick={() => onPanelChange(item.id)}
+                    onClick={() => { onPanelChange(item.id); if (isMobile) setOpenMobile(false) }}
                     tooltip={item.title}
                     className={cn(
                       'transition-all',
@@ -136,7 +136,7 @@ export function AppSidebar({ activePanel, onPanelChange }: AppSidebarProps) {
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton
                     isActive={activePanel === item.id}
-                    onClick={() => onPanelChange(item.id)}
+                    onClick={() => { onPanelChange(item.id); if (isMobile) setOpenMobile(false) }}
                     tooltip={item.title}
                     className={cn(
                       'transition-all',
