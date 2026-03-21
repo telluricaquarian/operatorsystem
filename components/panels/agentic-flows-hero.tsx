@@ -1,88 +1,149 @@
 'use client'
 
 const nodes = [
-  { id: 'start',    label: 'START',    sub: 'Lead Intake' },
-  { id: 'qualify',  label: 'QUALIFY',  sub: 'Qualification' },
-  { id: 'proposal', label: 'PROPOSAL', sub: 'Proposal Logic' },
-  { id: 'output',   label: 'OUTPUT',   sub: 'Structure Output' },
+  { id: 'start',    label: 'START',    sub: 'Lead Intake',      detail: 'Inbound / Outbound' },
+  { id: 'qualify',  label: 'QUALIFY',  sub: 'Qualification',    detail: 'Fit & Budget Check' },
+  { id: 'proposal', label: 'PROPOSAL', sub: 'Proposal Logic',   detail: 'Scope & Pricing' },
+  { id: 'output',   label: 'OUTPUT',   sub: 'Structure Output', detail: 'Asset Delivery' },
 ]
 
 export function AgenticFlowsHero() {
   return (
-    <div className="mb-6 rounded-2xl border border-border/50 bg-card/40 backdrop-blur-sm overflow-hidden">
-      {/* dot-grid background */}
+    <div
+      className="relative mb-6 rounded-2xl border border-border/50 overflow-hidden"
+      style={{
+        background: 'oklch(0.09 0 0)',
+        minHeight: '260px',
+      }}
+    >
+      {/* Dot-grid background — stronger, more spatial */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(circle, oklch(0.3 0 0 / 0.35) 1px, transparent 1px)',
-          backgroundSize: '24px 24px',
+            'radial-gradient(circle, oklch(0.32 0 0 / 0.55) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
         }}
       />
 
-      <div className="relative px-6 pt-5 pb-6">
-        {/* Header */}
-        <div className="mb-5">
-          <p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60 mb-1">
-            Overview
-          </p>
-          <h2 className="text-sm font-semibold tracking-tight text-foreground">
-            Agentic Workflow Overview
-          </h2>
-          <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed max-w-lg">
-            A high-level execution chain showing how inputs are transformed into structured business assets.
-          </p>
+      {/* Ambient orange glow at center */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 60% 50% at 50% 60%, oklch(0.75 0.15 45 / 0.07) 0%, transparent 70%)',
+        }}
+      />
+
+      {/* Edge fade — top and bottom vignette */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to bottom, oklch(0.09 0 0) 0%, transparent 18%, transparent 82%, oklch(0.09 0 0) 100%)',
+        }}
+      />
+
+      <div className="relative flex flex-col h-full px-8 pt-7 pb-8" style={{ minHeight: '260px' }}>
+        {/* Header row */}
+        <div className="mb-8 flex items-start justify-between">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/50 mb-1.5">
+              System Overview
+            </p>
+            <h2 className="text-base font-semibold tracking-tight text-foreground">
+              Agentic Workflow Overview
+            </h2>
+            <p className="mt-1 text-xs text-muted-foreground/70 leading-relaxed max-w-sm">
+              A high-level execution chain showing how inputs are transformed into structured business assets.
+            </p>
+          </div>
+          <div className="shrink-0 flex items-center gap-1.5 mt-0.5">
+            <span className="inline-flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-[10px] text-muted-foreground/50 uppercase tracking-widest">Live</span>
+          </div>
         </div>
 
-        {/* Node chain */}
-        <div className="flex items-center gap-0 overflow-x-auto pb-1 scrollbar-hide">
-          {nodes.map((node, i) => (
-            <div key={node.id} className="flex items-center shrink-0">
-              {/* Node */}
-              <div className="flex flex-col items-center gap-1.5">
-                <div
-                  className="animate-node-breathe flex items-center justify-center rounded-xl border border-primary/40 bg-primary/10 px-4 py-2.5 min-w-[88px]"
-                  style={{ animationDelay: `${i * 0.6}s` }}
-                >
-                  <span className="text-[11px] font-bold tracking-widest text-primary">
-                    {node.label}
+        {/* Node chain — centered vertically in remaining space */}
+        <div className="flex-1 flex items-center">
+          <div className="flex items-center w-full overflow-x-auto pb-1">
+            {nodes.map((node, i) => (
+              <div key={node.id} className="flex items-center shrink-0 flex-1 min-w-0">
+
+                {/* Node card */}
+                <div className="flex flex-col items-center flex-1">
+                  <div
+                    className="animate-node-breathe w-full max-w-[140px] rounded-xl border border-primary/30 px-4 py-4 flex flex-col items-center gap-1"
+                    style={{
+                      background: 'oklch(0.13 0 0)',
+                      animationDelay: `${i * 0.6}s`,
+                      boxShadow: 'inset 0 1px 0 oklch(0.75 0.15 45 / 0.08)',
+                    }}
+                  >
+                    <span
+                      className="text-[11px] font-bold tracking-[0.18em] text-primary"
+                    >
+                      {node.label}
+                    </span>
+                    <div className="h-px w-8 bg-border/60 my-0.5" />
+                    <span className="text-[11px] font-medium text-foreground/80 text-center">
+                      {node.sub}
+                    </span>
+                    <span className="text-[10px] text-muted-foreground/50 text-center">
+                      {node.detail}
+                    </span>
+                  </div>
+                  {/* Step index */}
+                  <span className="mt-2 text-[9px] text-muted-foreground/35 tracking-widest uppercase">
+                    Step {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <span className="text-[10px] text-muted-foreground/70 whitespace-nowrap">
-                  {node.sub}
-                </span>
-              </div>
 
-              {/* Connector — not after last node */}
-              {i < nodes.length - 1 && (
-                <div className="flex items-center mx-2 mb-4">
-                  <div
-                    className="animate-flow-pulse h-px w-10 bg-gradient-to-r from-primary/60 to-primary/20 rounded-full"
-                    style={{ animationDelay: `${i * 0.6 + 0.3}s` }}
-                  />
-                  <svg
-                    width="6"
-                    height="8"
-                    viewBox="0 0 6 8"
-                    fill="none"
-                    className="shrink-0 -ml-px"
-                    style={{ opacity: 0.5 }}
-                  >
-                    <path d="M0 0L6 4L0 8" fill="oklch(0.75 0.15 45)" />
-                  </svg>
-                </div>
-              )}
-            </div>
-          ))}
+                {/* Connector */}
+                {i < nodes.length - 1 && (
+                  <div className="flex items-center px-2 shrink-0 mb-5">
+                    <div
+                      className="animate-flow-pulse rounded-full"
+                      style={{
+                        height: '2px',
+                        width: '48px',
+                        background: 'linear-gradient(to right, oklch(0.75 0.15 45 / 0.7), oklch(0.75 0.15 45 / 0.2))',
+                        animationDelay: `${i * 0.6 + 0.3}s`,
+                      }}
+                    />
+                    <svg
+                      width="7"
+                      height="10"
+                      viewBox="0 0 7 10"
+                      fill="none"
+                      className="shrink-0"
+                      style={{ marginLeft: '-1px', opacity: 0.6 }}
+                    >
+                      <path d="M0 0L7 5L0 10" fill="oklch(0.75 0.15 45)" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Chronology label strip */}
-        <div className="mt-4 flex items-center gap-1.5">
-          <div className="h-px flex-1 bg-border/40" />
-          <span className="text-[10px] text-muted-foreground/50 tracking-wide whitespace-nowrap">
-            Lead Intake → Qualification → Proposal Logic → Structure Output
-          </span>
-          <div className="h-px flex-1 bg-border/40" />
+        {/* Chronology strip */}
+        <div className="mt-6 flex items-center gap-3">
+          <div className="h-px flex-1 bg-border/25" />
+          <div className="flex items-center gap-2">
+            {['Lead Intake', 'Qualification', 'Proposal Logic', 'Structure Output'].map((label, i, arr) => (
+              <div key={label} className="flex items-center gap-2">
+                <span className="text-[10px] text-muted-foreground/40 whitespace-nowrap tracking-wide">
+                  {label}
+                </span>
+                {i < arr.length - 1 && (
+                  <span className="text-muted-foreground/25 text-[10px]">→</span>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="h-px flex-1 bg-border/25" />
         </div>
       </div>
     </div>
