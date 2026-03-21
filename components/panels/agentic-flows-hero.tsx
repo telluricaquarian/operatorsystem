@@ -11,12 +11,9 @@ export function AgenticFlowsHero() {
   return (
     <div
       className="relative mb-6 rounded-2xl border border-border/50 overflow-hidden"
-      style={{
-        background: 'oklch(0.09 0 0)',
-        minHeight: '260px',
-      }}
+      style={{ background: 'oklch(0.09 0 0)', minHeight: '260px' }}
     >
-      {/* Dot-grid background — stronger, more spatial */}
+      {/* Dot-grid background */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -26,7 +23,7 @@ export function AgenticFlowsHero() {
         }}
       />
 
-      {/* Ambient orange glow at center */}
+      {/* Ambient orange glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -35,7 +32,7 @@ export function AgenticFlowsHero() {
         }}
       />
 
-      {/* Edge fade — top and bottom vignette */}
+      {/* Top/bottom vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -45,7 +42,7 @@ export function AgenticFlowsHero() {
       />
 
       <div className="relative flex flex-col h-full px-8 pt-7 pb-8" style={{ minHeight: '260px' }}>
-        {/* Header row */}
+        {/* Header */}
         <div className="mb-8 flex items-start justify-between">
           <div>
             <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/50 mb-1.5">
@@ -64,25 +61,22 @@ export function AgenticFlowsHero() {
           </div>
         </div>
 
-        {/* Node chain — centered vertically in remaining space */}
+        {/* Node chain */}
         <div className="flex-1 flex items-center">
           <div className="flex items-center w-full overflow-x-auto pb-1">
             {nodes.map((node, i) => (
               <div key={node.id} className="flex items-center shrink-0 flex-1 min-w-0">
 
-                {/* Node card */}
+                {/* Node card — fully static */}
                 <div className="flex flex-col items-center flex-1">
                   <div
-                    className="animate-node-breathe w-full max-w-[140px] rounded-xl border border-primary/30 px-4 py-4 flex flex-col items-center gap-1"
+                    className="w-full max-w-[140px] rounded-xl border border-primary/25 px-4 py-4 flex flex-col items-center gap-1"
                     style={{
                       background: 'oklch(0.13 0 0)',
-                      animationDelay: `${i * 0.6}s`,
-                      boxShadow: 'inset 0 1px 0 oklch(0.75 0.15 45 / 0.08)',
+                      boxShadow: 'inset 0 1px 0 oklch(0.75 0.15 45 / 0.06)',
                     }}
                   >
-                    <span
-                      className="text-[11px] font-bold tracking-[0.18em] text-primary"
-                    >
+                    <span className="text-[11px] font-bold tracking-[0.18em] text-primary">
                       {node.label}
                     </span>
                     <div className="h-px w-8 bg-border/60 my-0.5" />
@@ -93,31 +87,50 @@ export function AgenticFlowsHero() {
                       {node.detail}
                     </span>
                   </div>
-                  {/* Step index */}
                   <span className="mt-2 text-[9px] text-muted-foreground/35 tracking-widest uppercase">
                     Step {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>
 
-                {/* Connector */}
+                {/* Connector with traveling dot */}
                 {i < nodes.length - 1 && (
                   <div className="flex items-center px-2 shrink-0 mb-5">
-                    <div
-                      className="animate-flow-pulse rounded-full"
-                      style={{
-                        height: '2px',
-                        width: '48px',
-                        background: 'linear-gradient(to right, oklch(0.75 0.15 45 / 0.7), oklch(0.75 0.15 45 / 0.2))',
-                        animationDelay: `${i * 0.6 + 0.3}s`,
-                      }}
-                    />
+                    {/* Line + dot container */}
+                    <div style={{ position: 'relative', width: '48px', height: '2px' }}>
+                      {/* Static line */}
+                      <div
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          borderRadius: '9999px',
+                          background:
+                            'linear-gradient(to right, oklch(0.75 0.15 45 / 0.35), oklch(0.75 0.15 45 / 0.12))',
+                        }}
+                      />
+                      {/* Traveling orange dot */}
+                      <div
+                        className="animate-dot-flow"
+                        style={{
+                          position: 'absolute',
+                          top: '50%',
+                          left: '0px',
+                          width: '7px',
+                          height: '7px',
+                          borderRadius: '50%',
+                          background: 'oklch(0.75 0.15 45)',
+                          boxShadow: '0 0 6px 2px oklch(0.75 0.15 45 / 0.5)',
+                          animationDelay: `${i * 2}s`,
+                        }}
+                      />
+                    </div>
+                    {/* Arrowhead */}
                     <svg
                       width="7"
                       height="10"
                       viewBox="0 0 7 10"
                       fill="none"
                       className="shrink-0"
-                      style={{ marginLeft: '-1px', opacity: 0.6 }}
+                      style={{ marginLeft: '-1px', opacity: 0.4 }}
                     >
                       <path d="M0 0L7 5L0 10" fill="oklch(0.75 0.15 45)" />
                     </svg>
