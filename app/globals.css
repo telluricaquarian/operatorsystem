@@ -129,6 +129,16 @@
   }
 }
 
+@keyframes flow-pulse {
+  0%, 100% { opacity: 0.2; transform: scaleX(1); }
+  50%       { opacity: 1;   transform: scaleX(1.04); }
+}
+
+@keyframes node-breathe {
+  0%, 100% { box-shadow: 0 0 0px 0px var(--glow); }
+  50%       { box-shadow: 0 0 12px 2px var(--glow); }
+}
+
 @keyframes marquee-rtl {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -174,5 +184,12 @@
   }
   .animate-marquee {
     animation: marquee-rtl 26s linear infinite;
+  }
+  .animate-flow-pulse {
+    animation: flow-pulse 2.4s ease-in-out infinite;
+    transform-origin: left center;
+  }
+  .animate-node-breathe {
+    animation: node-breathe 2.4s ease-in-out infinite;
   }
 }

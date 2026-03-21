@@ -1,6 +1,7 @@
 'use client'
 
 import { Workflow, Plus, Copy, ArrowRight } from 'lucide-react'
+import { AgenticFlowsHero } from './agentic-flows-hero'
 import {
   Card,
   CardContent,
@@ -81,6 +82,8 @@ export function AgenticFlowsPanel() {
           </Button>
         </div>
       </div>
+
+      <AgenticFlowsHero />
 
       <ScrollArea className="flex-1">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
