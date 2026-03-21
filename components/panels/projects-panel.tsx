@@ -33,37 +33,51 @@ export function ProjectsPanel() {
           {mockProjects.map((project) => (
             <Card
               key={project.id}
-              className="border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 cursor-pointer"
+              className="relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 cursor-pointer"
             >
-              <CardHeader className="pb-3">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
-                      <FolderKanban className="size-5 text-primary" />
-                    </div>
-                    <CardTitle className="text-base">{project.name}</CardTitle>
+              {project.name === 'AvantSavant' && (
+                <>
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src="/avantbackground.png"
+                      alt="AvantSavant background"
+                      className="w-full h-full object-cover blur-[2px] scale-105"
+                    />
                   </div>
-                  <Button variant="ghost" size="icon" className="size-8 shrink-0">
-                    <MoreVertical className="size-4" />
-                    <span className="sr-only">More options</span>
-                  </Button>
-                </div>
-              </CardHeader>
-              {project.tags.length > 0 && (
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="outline"
-                        className="text-xs rounded-full border-border/60 text-muted-foreground"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/50 to-black/20" />
+                </>
               )}
+              <div className="relative z-20">
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
+                        <FolderKanban className="size-5 text-primary" />
+                      </div>
+                      <CardTitle className="text-base">{project.name}</CardTitle>
+                    </div>
+                    <Button variant="ghost" size="icon" className="size-8 shrink-0">
+                      <MoreVertical className="size-4" />
+                      <span className="sr-only">More options</span>
+                    </Button>
+                  </div>
+                </CardHeader>
+                {project.tags.length > 0 && (
+                  <CardContent className="pt-0">
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="outline"
+                          className="text-xs rounded-full border-border/60 text-muted-foreground"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                )}
+              </div>
             </Card>
           ))}
 
