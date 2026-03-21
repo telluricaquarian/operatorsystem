@@ -8,6 +8,8 @@ import { TerminalPanel } from '@/components/terminal/terminal-panel'
 import { ProjectsPanel } from '@/components/panels/projects-panel'
 import { HistoryPanel } from '@/components/panels/history-panel'
 import { TemplatesPanel } from '@/components/panels/templates-panel'
+import { SopsPanel } from '@/components/panels/sops-panel'
+import { AgenticFlowsPanel } from '@/components/panels/agentic-flows-panel'
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState('terminal')
@@ -26,6 +28,10 @@ export default function Home() {
         return <HistoryPanel onRerun={() => setActivePanel('terminal')} />
       case 'templates':
         return <TemplatesPanel onSelectTemplate={() => setActivePanel('terminal')} />
+      case 'sops':
+        return <SopsPanel />
+      case 'agentic-flows':
+        return <AgenticFlowsPanel />
       default:
         return <TerminalPanel />
     }

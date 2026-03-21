@@ -5,6 +5,8 @@ import {
   FolderKanban,
   History,
   LayoutTemplate,
+  BookOpen,
+  Workflow,
   Settings,
   ChevronLeft,
 } from 'lucide-react'
@@ -44,6 +46,16 @@ const menuItems = [
     title: 'Templates',
     icon: LayoutTemplate,
     id: 'templates',
+  },
+  {
+    title: 'SOPs',
+    icon: BookOpen,
+    id: 'sops',
+  },
+  {
+    title: 'Agentic Flows',
+    icon: Workflow,
+    id: 'agentic-flows',
   },
 ]
 
