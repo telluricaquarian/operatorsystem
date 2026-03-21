@@ -20,6 +20,118 @@ const workflows = [
     steps: ['Market Research', 'ICP Segmentation', 'Channel Selection', 'Outreach System'],
     tags: ['Strategy', 'Acquisition'],
   },
+  {
+    id: 'wf-2',
+    title: 'Lead Capture → Qualification → Fit Assessment',
+    description:
+      'Filters inbound and outbound leads for alignment, budget, urgency, and execution fit before any proposal work begins.',
+    steps: ['Lead Intake', 'Qualification', 'Need Assessment', 'Fit Decision'],
+    tags: ['Sales', 'Qualification'],
+  },
+  {
+    id: 'wf-3',
+    title: 'Discovery → Problem Framing → Opportunity Mapping',
+    description:
+      "Clarifies the client's actual bottlenecks, evaluates existing assets, and maps the highest-leverage opportunities for intervention.",
+    steps: ['Discovery Call', 'Problem Framing', 'Asset Audit', 'Opportunity Mapping'],
+    tags: ['Discovery', 'Strategy'],
+  },
+  {
+    id: 'wf-4',
+    title: 'Offer Architecture → Scope Definition → Pricing Logic',
+    description:
+      'Converts insights into a clearly structured offer with defined deliverables, boundaries, pricing, and expansion opportunities.',
+    steps: ['Offer Design', 'Scope Extraction', 'Deliverables Mapping', 'Pricing Logic'],
+    tags: ['Offer', 'Scoping'],
+  },
+  {
+    id: 'wf-5',
+    title: 'Client Brief → Proposal Draft → Approval Flow',
+    description:
+      'Transforms the scoped opportunity into a client-facing proposal with rationale, timeline, pricing, and approval mechanics.',
+    steps: ['Client Brief', 'Proposal Draft', 'Revision Pass', 'Approval Flow'],
+    tags: ['Proposal', 'Conversion'],
+  },
+  {
+    id: 'wf-6',
+    title: 'Onboarding → Asset Collection → Project Initialization',
+    description:
+      'Moves the engagement from approval into execution by securing assets, access, project details, and operational readiness.',
+    steps: ['Client Confirmation', 'Asset Collection', 'Access Setup', 'Project Initialization'],
+    tags: ['Onboarding', 'Operations'],
+  },
+  {
+    id: 'wf-7',
+    title: 'Research → References → Strategic Direction',
+    description:
+      'Establishes aesthetic, structural, and strategic direction through references, competitor review, and creative alignment.',
+    steps: ['Reference Gathering', 'Competitor Review', 'Direction Setting', 'Creative Alignment'],
+    tags: ['Research', 'Direction'],
+  },
+  {
+    id: 'wf-8',
+    title: 'Information Architecture → Messaging → Page Structure',
+    description:
+      'Defines what the system says, how it flows, and how the user moves through the experience.',
+    steps: ['Information Architecture', 'Messaging Stack', 'Section Planning', 'CTA Structure'],
+    tags: ['Messaging', 'Architecture'],
+  },
+  {
+    id: 'wf-9',
+    title: 'Design Execution → Interface Build → Atelier Quality',
+    description:
+      'Translates direction into premium, production-ready interface design with strong hierarchy, rhythm, and polish.',
+    steps: ['Wireframe Translation', 'UI Composition', 'Responsive Refinement', 'Visual Polish'],
+    tags: ['Design', 'Execution'],
+  },
+  {
+    id: 'wf-10',
+    title: 'Frontend Build → Component System → Responsive QA',
+    description:
+      'Builds the interface in a modular, reusable, responsive, and deployment-ready way.',
+    steps: ['Component Build', 'Layout Assembly', 'Responsive QA', 'Code Cleanup'],
+    tags: ['Frontend', 'Build'],
+  },
+  {
+    id: 'wf-11',
+    title: 'Automation Layer → Integrations → Workflow Enablement',
+    description:
+      'Connects the build to practical business operations such as lead routing, document generation, email actions, and automation logic.',
+    steps: ['Input Capture', 'Integration Setup', 'Automation Logic', 'Workflow Testing'],
+    tags: ['Automation', 'Systems'],
+  },
+  {
+    id: 'wf-12',
+    title: 'Review → Refinement → Stakeholder Feedback',
+    description:
+      'Improves the system through internal QA, stakeholder review, iteration, and final refinement before launch.',
+    steps: ['Internal Review', 'Client Feedback', 'Revision Pass', 'Final Refinement'],
+    tags: ['Review', 'Refinement'],
+  },
+  {
+    id: 'wf-13',
+    title: 'Deployment → Launch → Live Validation',
+    description:
+      'Ships the system to production, validates live behavior, and confirms readiness across domain, forms, and user experience.',
+    steps: ['Deploy Preview', 'Domain Connect', 'Production QA', 'Launch Validation'],
+    tags: ['Launch', 'Deployment'],
+  },
+  {
+    id: 'wf-14',
+    title: 'Documentation → Handover → Client Enablement',
+    description:
+      'Packages the completed work into a usable handover system with guidance, access, and enablement materials.',
+    steps: ['Documentation', 'Handover Pack', 'Walkthrough', 'Client Enablement'],
+    tags: ['Handover', 'Enablement'],
+  },
+  {
+    id: 'wf-15',
+    title: 'Follow-Up → Retention → Expansion Path',
+    description:
+      'Turns delivery into continuity through post-launch support, testimonials, upsells, and retainer-path expansion.',
+    steps: ['Post-Launch Check-In', 'Feedback Capture', 'Testimonial Request', 'Expansion Offer'],
+    tags: ['Retention', 'Growth'],
+  },
 ]
 
 export function ServiceDeliveryPanel() {
