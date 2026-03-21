@@ -35,6 +35,19 @@ export function ProjectsPanel() {
               key={project.id}
               className="relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 cursor-pointer"
             >
+              {project.name === 'IdeationStation' && (
+                <>
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src="/ideationstationbackground.png"
+                      alt="IdeationStation background"
+                      className="w-full h-full object-cover blur-[1.5px] scale-105 brightness-75 contrast-110 transition-all duration-500"
+                    />
+                  </div>
+                  <div className="absolute inset-0 z-10 bg-black/20" />
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
+                </>
+              )}
               {project.name === 'AvantSavant' && (
                 <>
                   <div className="absolute inset-0 z-0">
