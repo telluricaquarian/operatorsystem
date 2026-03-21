@@ -19,21 +19,9 @@ export const metadata: Metadata = {
   description: 'AI-powered business operating system for generating proposals, landing pages, and more',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/yellowaafav.png',
+    shortcut: '/yellowaafav.png',
+    apple: '/yellowaafav.png',
   },
 }
 
