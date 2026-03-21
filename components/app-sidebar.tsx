@@ -16,6 +16,10 @@ import {
   GitBranch,
   Layers,
   Cpu,
+  Share2,
+  Mail,
+  Video,
+  Phone,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -72,6 +76,13 @@ const productionItems = [
   { title: 'Flows',     icon: GitBranch, id: 'flows' },
   { title: 'Assets',    icon: Layers,    id: 'assets' },
   { title: 'Systems',   icon: Cpu,       id: 'systems' },
+]
+
+const acquisitionItems = [
+  { title: 'Social Media Outreach', icon: Share2, id: 'social-media-outreach' },
+  { title: 'Email Outreach',        icon: Mail,   id: 'email-outreach' },
+  { title: 'Loom Outreach',         icon: Video,  id: 'loom-outreach' },
+  { title: 'Numbers Called',        icon: Phone,  id: 'numbers-called' },
 ]
 
 const coreItems = [
@@ -146,6 +157,32 @@ export function AppSidebar({ activePanel, onPanelChange }: AppSidebarProps) {
           <SidebarGroupContent>
             <SidebarMenu>
               {productionItems.map((item) => (
+                <SidebarMenuItem key={item.id}>
+                  <SidebarMenuButton
+                    isActive={activePanel === item.id}
+                    onClick={() => { onPanelChange(item.id); if (isMobile) setOpenMobile(false) }}
+                    tooltip={item.title}
+                    className={cn(
+                      'transition-all',
+                      activePanel === item.id &&
+                        'bg-sidebar-accent text-sidebar-accent-foreground',
+                    )}
+                  >
+                    <item.icon className="size-4" />
+                    <span>{item.title}</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-muted-foreground/70 uppercase text-[10px] tracking-widest">
+            Customer Acquisition
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {acquisitionItems.map((item) => (
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton
                     isActive={activePanel === item.id}
