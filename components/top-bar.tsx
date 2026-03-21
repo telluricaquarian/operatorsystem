@@ -3,10 +3,11 @@
 import { Circle } from 'lucide-react'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { SidebarTrigger } from '@/components/ui/sidebar'
+import { SydneyTime } from '@/components/SydneyTime'
 
 export function TopBar() {
   return (
-    <header className="flex h-14 items-center justify-between border-b border-border bg-background/80 px-6 backdrop-blur-sm">
+    <header className="relative flex h-14 items-center justify-between border-b border-border bg-background/80 px-6 backdrop-blur-sm">
       <div className="flex items-center gap-3">
         <SidebarTrigger className="md:hidden -ml-2" aria-label="Open navigation menu" />
         <h1 className="text-lg font-semibold tracking-tight">
@@ -16,6 +17,9 @@ export function TopBar() {
           <Circle className="size-2 fill-primary text-primary animate-pulse" />
           <span className="text-xs font-medium text-primary">Ready</span>
         </div>
+      </div>
+      <div className="absolute left-1/2 -translate-x-1/2">
+        <SydneyTime />
       </div>
       <div className="flex items-center gap-4">
         <Avatar className="size-8 border border-border">
