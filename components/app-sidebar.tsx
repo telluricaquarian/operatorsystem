@@ -11,6 +11,11 @@ import {
   GraduationCap,
   Settings,
   ChevronLeft,
+  FileText,
+  Globe,
+  GitBranch,
+  Layers,
+  Cpu,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -61,6 +66,14 @@ const menuItems = [
   },
 ]
 
+const productionItems = [
+  { title: 'Documents', icon: FileText,  id: 'documents' },
+  { title: 'Websites',  icon: Globe,     id: 'websites' },
+  { title: 'Flows',     icon: GitBranch, id: 'flows' },
+  { title: 'Assets',    icon: Layers,    id: 'assets' },
+  { title: 'Systems',   icon: Cpu,       id: 'systems' },
+]
+
 const coreItems = [
   {
     title: 'Service Delivery',
@@ -107,6 +120,32 @@ export function AppSidebar({ activePanel, onPanelChange }: AppSidebarProps) {
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
+                <SidebarMenuItem key={item.id}>
+                  <SidebarMenuButton
+                    isActive={activePanel === item.id}
+                    onClick={() => { onPanelChange(item.id); if (isMobile) setOpenMobile(false) }}
+                    tooltip={item.title}
+                    className={cn(
+                      'transition-all',
+                      activePanel === item.id &&
+                        'bg-sidebar-accent text-sidebar-accent-foreground',
+                    )}
+                  >
+                    <item.icon className="size-4" />
+                    <span>{item.title}</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-muted-foreground/70 uppercase text-[10px] tracking-widest">
+            Production | Output
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {productionItems.map((item) => (
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton
                     isActive={activePanel === item.id}
