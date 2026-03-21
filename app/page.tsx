@@ -12,6 +12,7 @@ import { HomePanel } from '@/components/panels/home-panel'
 import { SopsPanel } from '@/components/panels/sops-panel'
 import { AgenticFlowsPanel } from '@/components/panels/agentic-flows-panel'
 import { ServiceDeliveryPanel } from '@/components/panels/service-delivery-panel'
+import { EduMaterialPanel } from '@/components/panels/edu-material-panel'
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState('terminal')
@@ -38,6 +39,8 @@ export default function Home() {
         return <AgenticFlowsPanel />
       case 'service-delivery':
         return <ServiceDeliveryPanel />
+      case 'edu-material':
+        return <EduMaterialPanel />
       default:
         return <TerminalPanel />
     }

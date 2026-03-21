@@ -9,6 +9,7 @@ import {
   BookOpen,
   Workflow,
   Briefcase,
+  GraduationCap,
   Settings,
   ChevronLeft,
 } from 'lucide-react'
@@ -71,6 +72,11 @@ const coreItems = [
     title: 'Service Delivery',
     icon: Briefcase,
     id: 'service-delivery',
+  },
+  {
+    title: 'Edu. Material',
+    icon: GraduationCap,
+    id: 'edu-material',
   },
 ]
 
