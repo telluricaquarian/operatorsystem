@@ -8,7 +8,6 @@ import type {
   EmailData,
   GenericData,
   Project,
-  HistoryItem,
   Template,
 } from './types'
 
@@ -199,33 +198,6 @@ export const mockProjects: Project[] = [
     tags: ['Agentic System', 'Workflow'],
     lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24 * 10),
     outputs: [],
-  },
-]
-
-export const mockHistory: HistoryItem[] = [
-  {
-    id: '1',
-    command: 'generate proposal for website redesign',
-    type: 'proposal',
-    timestamp: new Date(Date.now() - 1000 * 60 * 30), // 30 mins ago
-  },
-  {
-    id: '2',
-    command: 'generate landing page structure',
-    type: 'landing-page',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2), // 2 hours ago
-  },
-  {
-    id: '3',
-    command: 'generate offer stack for coaching program',
-    type: 'offer-stack',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 5), // 5 hours ago
-  },
-  {
-    id: '4',
-    command: 'generate client brief for TechStart',
-    type: 'client-brief',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 24), // 1 day ago
   },
 ]
 

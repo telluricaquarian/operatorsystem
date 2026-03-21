@@ -6,7 +6,6 @@ import { AppSidebar } from '@/components/app-sidebar'
 import { TopBar } from '@/components/top-bar'
 import { TerminalPanel } from '@/components/terminal/terminal-panel'
 import { ProjectsPanel } from '@/components/panels/projects-panel'
-import { HistoryPanel } from '@/components/panels/history-panel'
 import { TemplatesPanel } from '@/components/panels/templates-panel'
 import { HomePanel } from '@/components/panels/home-panel'
 import { SopsPanel } from '@/components/panels/sops-panel'
@@ -29,9 +28,7 @@ export default function Home() {
         return <TerminalPanel />
       case 'projects':
         return <ProjectsPanel />
-      case 'history':
-        return <HistoryPanel onRerun={() => setActivePanel('terminal')} />
-      case 'templates':
+case 'templates':
         return <TemplatesPanel onSelectTemplate={() => setActivePanel('terminal')} />
       case 'sops':
         return <SopsPanel />

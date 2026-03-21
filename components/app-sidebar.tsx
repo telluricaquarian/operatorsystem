@@ -4,7 +4,6 @@ import {
   House,
   Terminal,
   FolderKanban,
-  History,
   LayoutTemplate,
   BookOpen,
   Workflow,
@@ -44,11 +43,6 @@ const menuItems = [
     title: 'Projects',
     icon: FolderKanban,
     id: 'projects',
-  },
-  {
-    title: 'History',
-    icon: History,
-    id: 'history',
   },
   {
     title: 'Templates',

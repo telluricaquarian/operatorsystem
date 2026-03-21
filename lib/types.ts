@@ -86,13 +86,6 @@ export interface Project {
   outputs: OutputItem[]
 }
 
-export interface HistoryItem {
-  id: string
-  command: string
-  type: OutputType
-  timestamp: Date
-}
-
 export interface Template {
   id: string
   name: string
