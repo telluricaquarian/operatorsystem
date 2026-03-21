@@ -130,10 +130,12 @@
 }
 
 @keyframes dot-flow {
-  0%   { left: 10%;    opacity: 0; }
-  4%   { left: 12.5%;  opacity: 1; }
-  96%  { left: 85.5%;  opacity: 1; }
-  100% { left: 90%;    opacity: 0; }
+  0%   { left: 0px;  opacity: 0; }
+  6%   { opacity: 1; }
+  27%  { left: 49px; opacity: 1; }
+  33%  { left: 49px; opacity: 0; }
+  34%  { left: 0px;  opacity: 0; }
+  100% { left: 0px;  opacity: 0; }
 }
 
 @keyframes marquee-rtl {
@@ -183,6 +185,6 @@
     animation: marquee-rtl 26s linear infinite;
   }
   .animate-dot-flow {
-    animation: dot-flow 5s ease-in-out infinite;
+    animation: dot-flow 6s ease-in-out infinite;
   }
 }

@@ -7,6 +7,23 @@ const nodes = [
   { id: 'output',   label: 'OUTPUT',   sub: 'Structure Output', detail: 'Asset Delivery' },
 ]
 
+/*
+  Layout strategy:
+  - Flex row: [node] [connector-zone] [node] [connector-zone] [node] [connector-zone] [node]
+  - Connector zones are 56px wide flex items rendered BETWEEN cards.
+    The dot therefore only ever travels within the inter-card gap — never
+    through a card's interior.
+  - A separate full-width absolute line (z-index 0, behind cards) provides the
+    visual "continuous path" feeling. Cards (z-index 1) mask the line where it
+    passes beneath them, giving the circuit-board-trace effect.
+  - Three dots with delays of 0s / 2s / 4s on a 6s cycle create a sequential
+    single-dot-at-a-time animation.
+*/
+
+const CONNECTOR_W     = 56  // px — gap between card edges
+const DOT_SIZE        = 7   // px
+const CARD_CENTER_TOP = 43  // px — card center from top of node column
+
 export function AgenticFlowsHero() {
   return (
     <div
@@ -63,81 +80,105 @@ export function AgenticFlowsHero() {
 
         {/* Node chain */}
         <div className="flex-1 flex items-center">
-          {/*
-            Position-relative wrapper.
-            The continuous line and moving dot are absolute children that span
-            the full width. Node cards sit on top (z-index 1) and naturally
-            mask the line where it passes beneath them — giving the appearance
-            of a single connected system path.
-          */}
-          <div className="relative flex w-full" style={{ alignItems: 'flex-start' }}>
+          <div className="relative flex w-full items-start">
 
-            {/* ── Continuous background line ── */}
+            {/*
+              Full-width background line — purely visual, sits at z-index 0.
+              Cards (z-index 1) cover the portion of the line that runs beneath
+              them, so it reads as a connected path entering/exiting each card.
+              The animated dot is NOT on this absolute element; it lives inside
+              each connector zone below.
+            */}
             <div
               className="pointer-events-none"
               style={{
                 position: 'absolute',
-                /* Align with the vertical center of the cards.
-                   Cards are py-4 + ~54px content ≈ 86px tall.
-                   Card center ≈ 43px from top of node column. */
-                top: '43px',
-                left: '12.5%',
-                right: '12.5%',
+                top: `${CARD_CENTER_TOP}px`,
+                left: 0,
+                right: 0,
                 height: '2px',
                 background:
-                  'linear-gradient(to right, transparent 0%, oklch(0.75 0.15 45 / 0.3) 8%, oklch(0.75 0.15 45 / 0.3) 92%, transparent 100%)',
+                  'linear-gradient(to right, transparent 0%, oklch(0.75 0.15 45 / 0.28) 6%, oklch(0.75 0.15 45 / 0.28) 94%, transparent 100%)',
                 zIndex: 0,
               }}
             />
 
-            {/* ── Single traveling orange dot ── */}
-            <div
-              className="animate-dot-flow pointer-events-none"
-              style={{
-                position: 'absolute',
-                top: '43px',
-                marginTop: '-3.5px',  /* vertically center the 7px dot on the 2px line */
-                width: '7px',
-                height: '7px',
-                borderRadius: '50%',
-                background: 'oklch(0.75 0.15 45)',
-                boxShadow: '0 0 8px 3px oklch(0.75 0.15 45 / 0.55)',
-                zIndex: 10,
-              }}
-            />
-
-            {/* ── Node cards ── */}
-            {nodes.map((node, i) => (
-              <div
-                key={node.id}
-                className="flex flex-col items-center"
-                style={{ flex: 1, position: 'relative', zIndex: 1 }}
-              >
-                {/* Card — static, no animation */}
+            {/* Interleaved nodes and connector zones */}
+            {nodes.flatMap((node, i) => {
+              const nodeEl = (
                 <div
-                  className="w-full max-w-[140px] rounded-xl border border-primary/25 px-4 py-4 flex flex-col items-center gap-1"
-                  style={{
-                    background: 'oklch(0.13 0 0)',
-                    boxShadow: 'inset 0 1px 0 oklch(0.75 0.15 45 / 0.06)',
-                  }}
+                  key={node.id}
+                  className="flex flex-col items-center"
+                  style={{ flex: 1, position: 'relative', zIndex: 1 }}
                 >
-                  <span className="text-[11px] font-bold tracking-[0.18em] text-primary">
-                    {node.label}
-                  </span>
-                  <div className="h-px w-8 bg-border/60 my-0.5" />
-                  <span className="text-[11px] font-medium text-foreground/80 text-center">
-                    {node.sub}
-                  </span>
-                  <span className="text-[10px] text-muted-foreground/50 text-center">
-                    {node.detail}
+                  {/* Static card */}
+                  <div
+                    className="w-full max-w-[140px] rounded-xl border border-primary/25 px-4 py-4 flex flex-col items-center gap-1"
+                    style={{
+                      background: 'oklch(0.13 0 0)',
+                      boxShadow: 'inset 0 1px 0 oklch(0.75 0.15 45 / 0.06)',
+                    }}
+                  >
+                    <span className="text-[11px] font-bold tracking-[0.18em] text-primary">
+                      {node.label}
+                    </span>
+                    <div className="h-px w-8 bg-border/60 my-0.5" />
+                    <span className="text-[11px] font-medium text-foreground/80 text-center">
+                      {node.sub}
+                    </span>
+                    <span className="text-[10px] text-muted-foreground/50 text-center">
+                      {node.detail}
+                    </span>
+                  </div>
+                  <span className="mt-2 text-[9px] text-muted-foreground/35 tracking-widest uppercase">
+                    Step {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>
-                {/* Step index below card */}
-                <span className="mt-2 text-[9px] text-muted-foreground/35 tracking-widest uppercase">
-                  Step {String(i + 1).padStart(2, '0')}
-                </span>
-              </div>
-            ))}
+              )
+
+              if (i >= nodes.length - 1) return [nodeEl]
+
+              /*
+                Connector zone — a fixed-width flex item that lives entirely
+                in the gap between two cards. The dot is position:absolute
+                inside this zone so it can never overlap a card.
+              */
+              const connectorEl = (
+                <div
+                  key={`c-${i}`}
+                  style={{
+                    position: 'relative',
+                    width: `${CONNECTOR_W}px`,
+                    flexShrink: 0,
+                    /* Align this zone's vertical center with the card center */
+                    alignSelf: 'flex-start',
+                    marginTop: `${CARD_CENTER_TOP}px`,
+                    height: '2px',
+                    zIndex: 2,
+                  }}
+                >
+                  {/* Traveling dot — confined strictly to this connector zone */}
+                  <div
+                    className="animate-dot-flow"
+                    style={{
+                      position: 'absolute',
+                      top: '50%',
+                      marginTop: `-${DOT_SIZE / 2}px`,
+                      left: '0px',
+                      width: `${DOT_SIZE}px`,
+                      height: `${DOT_SIZE}px`,
+                      borderRadius: '50%',
+                      background: 'oklch(0.75 0.15 45)',
+                      boxShadow: '0 0 8px 3px oklch(0.75 0.15 45 / 0.55)',
+                      /* Each connector's dot fires 2s after the previous */
+                      animationDelay: `${i * 2}s`,
+                    }}
+                  />
+                </div>
+              )
+
+              return [nodeEl, connectorEl]
+            })}
           </div>
         </div>
 
