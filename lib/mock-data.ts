@@ -177,30 +177,6 @@ export function generateMockOutput(command: string): OutputItem {
 
 export const mockProjects: Project[] = [
   {
-    id: '1',
-    name: 'Acme Website Redesign',
-    type: 'proposal',
-    tags: [],
-    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 2),
-    outputs: [],
-  },
-  {
-    id: '2',
-    name: 'SaaS Landing Page',
-    type: 'landing-page',
-    tags: [],
-    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24),
-    outputs: [],
-  },
-  {
-    id: '3',
-    name: 'Growth System Launch',
-    type: 'offer-stack',
-    tags: [],
-    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3),
-    outputs: [],
-  },
-  {
     id: '4',
     name: 'IdeationStation',
     type: 'generic',
