@@ -32,6 +32,7 @@ interface ProjectDetail {
   frameworks: string[]
   uiLibraries: string[]
   tooling: string[]
+  siteUrl?: string
 }
 
 const projectDetails: Record<string, ProjectDetail> = {
@@ -47,6 +48,7 @@ const projectDetails: Record<string, ProjectDetail> = {
     frameworks: ['Next.js', 'React'],
     uiLibraries: ['shadcn/ui', 'Tailwind CSS'],
     tooling: ['Claude', 'V0', 'Vercel'],
+    siteUrl: 'https://www.areculateir.com',
   },
   '4': {
     id: '4',
@@ -137,13 +139,7 @@ export function ProjectsPanel() {
           {mockProjects.map((project) => (
             <Card
               key={project.id}
-              onClick={() => {
-                if (project.name === 'Areculateir') {
-                  window.open('https://www.areculateir.com', '_blank', 'noopener,noreferrer')
-                } else {
-                  setOpenId(project.id)
-                }
-              }}
+              onClick={() => setOpenId(project.id)}
               className="relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 cursor-pointer min-h-[240px]"
             >
               {project.name === 'Areculateir' && (
@@ -296,6 +292,19 @@ export function ProjectsPanel() {
                   <p className="text-sm text-foreground/80 leading-relaxed">
                     {activeDetail.description}
                   </p>
+
+                  {/* External site link — rendered when siteUrl is present */}
+                  {activeDetail.siteUrl && (
+                    <a
+                      href={activeDetail.siteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-md border border-border/50 bg-background/40 px-3 py-1.5 text-xs text-foreground/80 transition-colors hover:border-primary/40 hover:text-foreground"
+                    >
+                      Visit Site
+                      <span className="text-muted-foreground/40">↗</span>
+                    </a>
+                  )}
 
                   {/* Metadata pill groups */}
                   <div className="space-y-4 border-t border-border/30 pt-5">
