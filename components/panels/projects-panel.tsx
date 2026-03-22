@@ -237,7 +237,7 @@ export function ProjectsPanel() {
                 </DialogClose>
 
                 {/* Hero image */}
-                <div className="relative h-48 w-full overflow-hidden rounded-t-xl sm:h-56">
+                <div className="relative h-56 w-full overflow-hidden rounded-t-xl sm:h-72">
                   <img
                     src={activeDetail.image}
                     alt={activeDetail.name}
