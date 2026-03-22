@@ -14,7 +14,7 @@ import { ServiceDeliveryPanel } from '@/components/panels/service-delivery-panel
 import { EduMaterialPanel } from '@/components/panels/edu-material-panel'
 
 export default function Home() {
-  const [activePanel, setActivePanel] = useState('terminal')
+  const [activePanel, setActivePanel] = useState('home')
 
   const handlePanelChange = (panel: string) => {
     setActivePanel(panel)
