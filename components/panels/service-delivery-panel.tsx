@@ -143,6 +143,75 @@ export function ServiceDeliveryPanel() {
       </div>
 
       <ScrollArea className="flex-1">
+
+        {/* ── Explanatory block ──────────────────────────────────────── */}
+        <div className="mb-10 space-y-8">
+
+          {/* Quote callouts */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Left quote */}
+            <div className="space-y-3">
+              <div
+                className="text-sm font-medium leading-relaxed text-black px-2 py-0.5"
+                style={{ background: '#F5F501', display: 'inline' }}
+              >
+                &ldquo;Research is seeing what everybody else has seen and thinking what nobody else has thought.&rdquo;
+              </div>
+              <p className="text-xs text-muted-foreground/60 tracking-wide mt-2">— Albert Szent-Györgyi</p>
+            </div>
+
+            {/* Right quote */}
+            <div className="space-y-3">
+              <div
+                className="text-sm font-medium leading-relaxed text-black px-2 py-0.5"
+                style={{ background: '#F5F501', display: 'inline' }}
+              >
+                &ldquo;Advertising people who ignore research are as dangerous as generals who ignore decodes of enemy signals.&rdquo;
+              </div>
+              <p className="text-xs text-muted-foreground/60 tracking-wide mt-2">— David Ogilvy</p>
+            </div>
+          </div>
+
+          {/* Occam's Razor copy block */}
+          <div className="space-y-4 border-l-2 border-primary/30 pl-5">
+            <p className="text-xs text-muted-foreground/50 uppercase tracking-widest">
+              (What Areculateir does for their customers in as simple explanatory manner as possible)
+            </p>
+
+            <h3 className="text-base font-semibold tracking-tight">Occams Razor:</h3>
+
+            <p
+              className="text-sm font-medium leading-relaxed text-black px-2 py-1"
+              style={{ background: '#F5F501' }}
+            >
+              We build sites that look significantly more premium for customers, businesses and brands using UI library components that have higher ended appearance and increase the perceived value of the brand — and or ensure said brand is perceived in the light it should be viewed in. This increase and or enhanced design should as result do a few things:
+            </p>
+
+            <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed list-none">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary/60 shrink-0" />
+                Reduce and or completely remove any and all attempts and consideration to haggle from the user due to perceived austerity, professionalism and competence.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary/60 shrink-0" />
+                Increase unconscious trust, compliance and intent to engage with CTAs.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary/60 shrink-0" />
+                Reduce friction &amp; latency and as a result increase rate and speed to conversion from lead to paying customer.
+              </li>
+            </ul>
+
+            <p
+              className="text-sm font-medium leading-relaxed text-black px-2 py-1"
+              style={{ background: '#F5F501' }}
+            >
+              We build and strategically produce automations that improve efficiency of operations, creating deterministic reliability of results &amp; reduced cognitive load thus liberating mental bandwidth to be allocated towards higher leverage activities or more important matters.
+            </p>
+          </div>
+        </div>
+        {/* ── End explanatory block ──────────────────────────────────── */}
+
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {workflows.map((workflow) => (
             <Card
