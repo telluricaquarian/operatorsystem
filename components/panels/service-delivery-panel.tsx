@@ -134,203 +134,213 @@ const workflows = [
   },
 ]
 
+// Methodology grid — 3-col layout matching Figma
+// Logo-heavy cells sit in col-1 of each row; text-heavy cells fill cols 2–3
+const methodGrid = [
+  // Row 1
+  {
+    id: 'mg-1',
+    title: 'Web Scraping & Client Acquisition',
+    logos: ['Apify_logo-white-safe_1 1.png', 'logo-light 1.png'],
+    body: null,
+    bullets: null,
+  },
+  {
+    id: 'mg-2',
+    title: 'Web Scraping: Data Collection',
+    logos: [],
+    body: 'The simplest definition (accurate)\nWeb scraping = automated data extraction from web pages.\nInstead of manually copying:',
+    bullets: ['names', 'emails', 'prices', 'listings', '...a script or tool does it for you at scale.'],
+  },
+  {
+    id: 'mg-3',
+    title: 'Client Acquisition | Existing Datasets',
+    logos: [],
+    body: 'Client acquisition = using the collected data to contact prospects and move them from lead → paying customer.\n\nA service or brand like Apollo.io has existing customer data — all you need to do is be specific about what and whom you are targeting, then configure and interact with their site.',
+    bullets: null,
+  },
+  // Row 2
+  {
+    id: 'mg-4',
+    title: 'Sourcing Templates & Components for Projects',
+    logos: ['v0-logo-dark 1.png', '21stdev 1.png', 'reactflowxyflow 1.png'],
+    body: null,
+    bullets: null,
+  },
+  {
+    id: 'mg-5',
+    title: 'UI Libraries & Components',
+    logos: [],
+    body: 'UI Libraries and Templates using higher-ended coding language enable us both inspiration and speed-to-market when building out a prototype or project.',
+    bullets: null,
+  },
+  {
+    id: 'mg-6',
+    title: 'Prototyping + Lead Magnet',
+    logos: [],
+    body: 'With templates and AI, drafting up a significantly high quality site or project to act as a lead magnet or "bait" is easy to do — and thus acts as the lead magnet marketing/advertising asset to share with the prospect to get them captivated and intrigued.',
+    bullets: null,
+  },
+  // Row 3
+  {
+    id: 'mg-7',
+    title: 'Iteration & Refinement of Design',
+    logos: ['claude-color 1.png', 'cursor-2 1.png', 'gemini-color 1.png', 'v0-logo-dark 2.png'],
+    body: null,
+    bullets: null,
+  },
+  {
+    id: 'mg-8',
+    title: 'Agentic Coding Tools',
+    logos: [],
+    body: 'Claude, Codex, and Gemini are coding-capable AI models that can be integrated into IDEs, CLIs, or custom systems. They become truly agentic when given access to tools like the filesystem, terminal, and multi-step workflows — not merely by being embedded in an editor.',
+    bullets: null,
+  },
+  {
+    id: 'mg-9',
+    title: 'UI Generation Systems',
+    logos: [],
+    body: 'v0 Dev is also a UI generation system that can build things based off the prompt fed into it — as is Google Gemini.\n\nA workflow utilised to achieve this is often utilising an LLM to generate the prompt, then subsequently taking that prompt and feeding it into a UI generation system to build out what the prompt indicates.',
+    bullets: null,
+  },
+  // Row 4
+  {
+    id: 'mg-10',
+    title: 'Webhooks, Automation, Workflows & Functionality',
+    logos: ['zed-logo-wordmark-brand-blue-1348dc-&-white 2.png', 'icons8-visual-studio-code-480 1.png'],
+    body: null,
+    bullets: null,
+  },
+  {
+    id: 'mg-11',
+    title: 'Determinism via self annealment',
+    logos: [],
+    body: "Inside of IDEs we are afforded the ability to self-correct and self-anneal by way of a system prompt in the form of markdown files that tell the specific LLM we are getting to inspect and function based off of that specifically — direct through natural language; for instance \"do not create sites with dark mode\" can be one of the postulates or directives we input into the system prompt md file that the LLM reads whenever we give it a prompt.\n\nSo essentially any time you prompt the LLM inside of an IDE it is also reading the larger system prompt file in tandem with the say \"smaller\" prompt you provide it.\n\nThe larger system prompt md file is also contributed towards by the LLM over time — adding things to omit and or to consider/add when committing and or fulfilling its function/functions.",
+    bullets: null,
+  },
+  {
+    id: 'mg-12',
+    title: 'Saved Time & Top of Mind',
+    logos: [],
+    body: 'With the correct infrastructure in place we are afforded both more deterministic & faster outcomes, and in regards to customer correspondence and the customer journey they are granted a more pleasant experience.',
+    bullets: null,
+  },
+]
+
 export function ServiceDeliveryPanel() {
   return (
     <div className="flex h-full flex-col p-6">
-      <div className="mb-6">
+      <div className="mb-5">
         <h1 className="text-2xl font-semibold tracking-tight">Service Delivery - Workflow</h1>
-        <p className="text-muted-foreground">A - Z Meticulous Detail</p>
+        <p className="text-sm text-muted-foreground">A - Z Meticulous Detail</p>
       </div>
 
       <ScrollArea className="flex-1">
 
-        {/* ── Explanatory block ──────────────────────────────────────── */}
-        <div className="mb-10 space-y-8">
-
-          {/* Quote callouts */}
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Left quote */}
-            <div className="space-y-3">
-              <div
-                className="text-sm font-medium leading-relaxed text-black px-2 py-0.5"
-                style={{ background: '#F5F501', display: 'inline' }}
-              >
-                &ldquo;Research is seeing what everybody else has seen and thinking what nobody else has thought.&rdquo;
-              </div>
-              <p className="text-xs text-muted-foreground/60 tracking-wide mt-2">— Albert Szent-Györgyi</p>
+        {/* ── Quote blocks ─────────────────────────────────────────────── */}
+        <div className="grid gap-4 md:grid-cols-2 mb-6">
+          {/* Left quote — solid yellow block */}
+          <div>
+            <div
+              className="text-sm font-medium leading-snug text-black px-3 py-2.5"
+              style={{ background: '#F5F501' }}
+            >
+              &ldquo;Research is seeing what everybody else has seen and thinking what nobody else has thought.&rdquo;
             </div>
-
-            {/* Right quote */}
-            <div className="space-y-3">
-              <div
-                className="text-sm font-medium leading-relaxed text-black px-2 py-0.5"
-                style={{ background: '#F5F501', display: 'inline' }}
-              >
-                &ldquo;Advertising people who ignore research are as dangerous as generals who ignore decodes of enemy signals.&rdquo;
-              </div>
-              <p className="text-xs text-muted-foreground/60 tracking-wide mt-2">— David Ogilvy</p>
-            </div>
+            <p className="text-xs text-muted-foreground/60 mt-2 pl-0.5">— Albert Szent-Györgyi</p>
           </div>
 
-          {/* Occam's Razor copy block */}
-          <div className="space-y-4 border-l-2 border-primary/30 pl-5">
-            <p className="text-xs text-muted-foreground/50 uppercase tracking-widest">
-              (What Areculateir does for their customers in as simple explanatory manner as possible)
-            </p>
-
-            <h3 className="text-base font-semibold tracking-tight">Occams Razor:</h3>
-
-            <p
-              className="text-sm font-medium leading-relaxed text-black px-2 py-1"
+          {/* Right quote — solid yellow block */}
+          <div>
+            <div
+              className="text-sm font-medium leading-snug text-black px-3 py-2.5"
               style={{ background: '#F5F501' }}
             >
-              We build sites that look significantly more premium for customers, businesses and brands using UI library components that have higher ended appearance and increase the perceived value of the brand — and or ensure said brand is perceived in the light it should be viewed in. This increase and or enhanced design should as result do a few things:
-            </p>
-
-            <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed list-none">
-              <li className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary/60 shrink-0" />
-                Reduce and or completely remove any and all attempts and consideration to haggle from the user due to perceived austerity, professionalism and competence.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary/60 shrink-0" />
-                Increase unconscious trust, compliance and intent to engage with CTAs.
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary/60 shrink-0" />
-                Reduce friction &amp; latency and as a result increase rate and speed to conversion from lead to paying customer.
-              </li>
-            </ul>
-
-            <p
-              className="text-sm font-medium leading-relaxed text-black px-2 py-1"
-              style={{ background: '#F5F501' }}
-            >
-              We build and strategically produce automations that improve efficiency of operations, creating deterministic reliability of results &amp; reduced cognitive load thus liberating mental bandwidth to be allocated towards higher leverage activities or more important matters.
-            </p>
+              &ldquo;advertising people who ignore research are as dangerous as generals who ignore decodes of enemy signals&rdquo;.
+            </div>
+            <p className="text-xs text-muted-foreground/60 mt-2 pl-0.5">— David Ogilvy</p>
           </div>
         </div>
-          {/* ── Expanded methodology grid ────────────────────────────── */}
-          <div className="grid gap-6 md:grid-cols-2">
 
-            {/* Web Scraping & Client Acquisition */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Web Scraping &amp; Client Acquisition</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Programmatic extraction of prospect data from directories, LinkedIn, and industry databases to build high-quality, targeted lead lists for outreach campaigns.
-              </p>
+        {/* ── Occam's Razor intro ──────────────────────────────────────── */}
+        <div className="mb-10 space-y-3">
+          <p className="text-xs text-muted-foreground/50">
+            (What Areculateir does for their customers in as simple explanatory manner as possible)
+          </p>
+          <p className="text-sm font-semibold text-foreground">Occams Razor:</p>
+
+          <p className="text-sm text-foreground/80 leading-relaxed">
+            We build sites that look significantly more premium for customers, businesses and brands using UI library components that have higher ended appearance and increase the perceived value of the brand and or ensure said brand is perceived in the light it should be viewed in. This increase and or enhanced design should as result do a few things:
+          </p>
+
+          <ul className="space-y-1 pl-1">
+            <li className="text-sm font-semibold italic text-foreground/90">
+              • Reduce and or completely remove any and all attempts and consideration to haggle from the user due to perceived austerity, professionalism and competence.
+            </li>
+            <li className="text-sm font-semibold italic text-foreground/90">
+              • Increase Unconscious Trust, Compliance and intent to engage with CTAs.
+            </li>
+            <li className="text-sm font-semibold italic text-foreground/90">
+              • Reduce Friction &amp; Latency and as a result Increase rate and speed to conversion from lead to paying customer.
+            </li>
+          </ul>
+
+          <p className="text-sm text-foreground/80 leading-relaxed">
+            We build and strategically produce automations that improve efficiency of operations, creating deterministic reliability of results &amp; reduced cognitive load thus liberating mental bandwidth to be allocated towards higher leverage activities or more important matters.
+          </p>
+        </div>
+
+        {/* ── Methodology grid — 3 columns, open canvas, no card borders ─ */}
+        <div className="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 mb-12">
+          {methodGrid.map((cell) => (
+            <div key={cell.id} className="space-y-3">
+              {/* Heading */}
+              <h3 className="text-sm font-semibold text-foreground leading-snug">
+                {cell.title}
+              </h3>
+
+              {/* Logo row — dominant visual element when present */}
+              {cell.logos.length > 0 && (
+                <div className="flex flex-wrap items-center gap-4 py-1">
+                  {cell.logos.map((img) => (
+                    <img
+                      key={img}
+                      src={`/${img}`}
+                      alt=""
+                      className="h-9 object-contain opacity-90"
+                    />
+                  ))}
+                </div>
+              )}
+
+              {/* Body copy */}
+              {cell.body && (
+                <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
+                  {cell.body}
+                </p>
+              )}
+
+              {/* Bullet list */}
+              {cell.bullets && (
+                <ul className="space-y-0.5 pl-0.5">
+                  {cell.bullets.map((b) => (
+                    <li key={b} className="text-xs text-muted-foreground leading-relaxed flex gap-1.5">
+                      <span className="mt-0.5 text-muted-foreground/40">•</span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
+          ))}
+        </div>
 
-            {/* Web Scraping: Data Collection */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Web Scraping: Data Collection</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Structured collection of business names, contact details, service categories, and digital presence signals — processed into clean, actionable datasets.
-              </p>
-            </div>
-
-            {/* Client Acquisition | Existing Datasets */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Client Acquisition | Existing Datasets</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Leveraging pre-built and curated datasets of qualified prospects to accelerate pipeline-building and reduce time-to-first-conversation with ideal clients.
-              </p>
-            </div>
-
-            {/* Sourcing Templates & Components */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Sourcing Templates &amp; Components for Projects</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Identifying and integrating best-in-class UI components, design systems, and structural templates that reduce build time without sacrificing quality or brand alignment.
-              </p>
-            </div>
-
-            {/* UI Libraries & Components */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">UI Libraries &amp; Components</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Selecting and deploying component libraries such as shadcn/ui, Radix, and 21st.dev to deliver interfaces that communicate premium quality and elevate brand perception.
-              </p>
-              <div className="flex flex-wrap items-center gap-3 pt-1">
-                {['21stdev 1.png', 'reactflowxyflow 1.png', 'v0-logo-dark 1.png'].map((img) => (
-                  <img key={img} src={`/${img}`} alt="" className="h-5 object-contain opacity-60" />
-                ))}
-              </div>
-            </div>
-
-            {/* Prototyping + Lead Magnet */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Prototyping + Lead Magnet</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Rapid prototyping of client-facing interfaces used as tangible proof-of-concept during acquisition — reducing sales friction and demonstrating capability before contract.
-              </p>
-            </div>
-
-            {/* Iteration & Refinement of Design */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Iteration &amp; Refinement of Design</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Systematic refinement cycles driven by stakeholder feedback, visual QA, and aesthetic judgment — converging on atelier-quality output before handover.
-              </p>
-            </div>
-
-            {/* Agentic Coding Tools */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Agentic Coding Tools</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Using AI-native development environments and agentic coding assistants to accelerate implementation, reduce context-switching, and maintain consistent code quality.
-              </p>
-              <div className="flex flex-wrap items-center gap-3 pt-1">
-                {['claude-color 1.png', 'codex-color 1.png', 'cursor-2 1.png', 'gemini-color 1.png'].map((img) => (
-                  <img key={img} src={`/${img}`} alt="" className="h-5 object-contain opacity-60" />
-                ))}
-              </div>
-            </div>
-
-            {/* UI Generation Systems */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">UI Generation Systems</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                AI-assisted UI generation tools used to rapidly scaffold high-quality interface structures — then refined to production standard through manual design judgment.
-              </p>
-              <div className="flex flex-wrap items-center gap-3 pt-1">
-                {['v0-logo-dark 2.png', 'icons8-visual-studio-code-480 1.png'].map((img) => (
-                  <img key={img} src={`/${img}`} alt="" className="h-5 object-contain opacity-60" />
-                ))}
-              </div>
-            </div>
-
-            {/* Webhooks, Automation, Workflows & Functionality */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Webhooks, Automation, Workflows &amp; Functionality</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Connecting systems via webhooks, no-code triggers, and automation logic to create functional, self-operating business workflows that reduce manual overhead.
-              </p>
-              <div className="flex flex-wrap items-center gap-3 pt-1">
-                {['Apify_logo-white-safe_1 1.png', 'logo-light 1.png'].map((img) => (
-                  <img key={img} src={`/${img}`} alt="" className="h-5 object-contain opacity-60" />
-                ))}
-              </div>
-            </div>
-
-            {/* Determinism via self annealment */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Determinism via Self Annealment</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Building systems with self-correcting logic and deterministic outputs — iterative refinement that converges on reliable, repeatable results independent of operator variance.
-              </p>
-            </div>
-
-            {/* Saved Time & Top of Mind */}
-            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
-              <h3 className="text-sm font-semibold tracking-tight text-foreground">Saved Time &amp; Top of Mind</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Automation and systematic delivery that recovers billable time, reduces cognitive overhead, and keeps Areculateir present in the client's daily operational context.
-              </p>
-            </div>
-
-          </div>
-          {/* ── End expanded methodology grid ────────────────────────── */}
+        {/* ── Workflow cards ────────────────────────────────────────────── */}
+        <div className="border-t border-border/30 pt-8 mb-4">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground/40 mb-5">
+            Workflow Sequence
+          </p>
+        </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {workflows.map((workflow) => (
@@ -380,6 +390,7 @@ export function ServiceDeliveryPanel() {
             </Card>
           ))}
         </div>
+
       </ScrollArea>
     </div>
   )
