@@ -346,9 +346,9 @@ export function ServiceDeliveryPanel() {
           {workflows.map((workflow) => (
             <Card
               key={workflow.id}
-              className="border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 cursor-pointer"
+              className="border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 cursor-pointer min-h-[220px]"
             >
-              <CardHeader className="pb-3">
+              <CardHeader className="pb-3 pt-5">
                 <div className="flex items-start gap-3">
                   <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 shrink-0">
                     <Briefcase className="size-5 text-primary" />
