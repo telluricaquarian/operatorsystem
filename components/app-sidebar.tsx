@@ -20,6 +20,8 @@ import {
   Mail,
   Video,
   Phone,
+  Plug,
+  Bot,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -90,6 +92,16 @@ const coreItems = [
     title: 'Service Delivery',
     icon: Briefcase,
     id: 'service-delivery',
+  },
+  {
+    title: 'MCPs',
+    icon: Plug,
+    id: 'mcps',
+  },
+  {
+    title: 'Claude Code',
+    icon: Bot,
+    id: 'claude-code',
   },
   {
     title: 'Edu. Material',

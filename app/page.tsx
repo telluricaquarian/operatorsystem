@@ -12,6 +12,8 @@ import { SopsPanel } from '@/components/panels/sops-panel'
 import { AgenticFlowsPanel } from '@/components/panels/agentic-flows-panel'
 import { ServiceDeliveryPanel } from '@/components/panels/service-delivery-panel'
 import { EduMaterialPanel } from '@/components/panels/edu-material-panel'
+import { McpsPanel } from '@/components/panels/mcps-panel'
+import { ClaudeCodePanel } from '@/components/panels/claude-code-panel'
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState('home')
@@ -36,6 +38,10 @@ export default function Home() {
         return <AgenticFlowsPanel />
       case 'service-delivery':
         return <ServiceDeliveryPanel />
+      case 'mcps':
+        return <McpsPanel />
+      case 'claude-code':
+        return <ClaudeCodePanel />
       case 'edu-material':
         return <EduMaterialPanel />
       default:
