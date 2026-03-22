@@ -28,7 +28,7 @@ export default function Home() {
         return <TerminalPanel />
       case 'projects':
         return <ProjectsPanel />
-case 'templates':
+      case 'templates':
         return <TemplatesPanel onSelectTemplate={() => setActivePanel('terminal')} />
       case 'sops':
         return <SopsPanel />

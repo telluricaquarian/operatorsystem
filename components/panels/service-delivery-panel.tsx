@@ -210,7 +210,127 @@ export function ServiceDeliveryPanel() {
             </p>
           </div>
         </div>
-        {/* ── End explanatory block ──────────────────────────────────── */}
+          {/* ── Expanded methodology grid ────────────────────────────── */}
+          <div className="grid gap-6 md:grid-cols-2">
+
+            {/* Web Scraping & Client Acquisition */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Web Scraping &amp; Client Acquisition</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Programmatic extraction of prospect data from directories, LinkedIn, and industry databases to build high-quality, targeted lead lists for outreach campaigns.
+              </p>
+            </div>
+
+            {/* Web Scraping: Data Collection */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Web Scraping: Data Collection</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Structured collection of business names, contact details, service categories, and digital presence signals — processed into clean, actionable datasets.
+              </p>
+            </div>
+
+            {/* Client Acquisition | Existing Datasets */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Client Acquisition | Existing Datasets</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Leveraging pre-built and curated datasets of qualified prospects to accelerate pipeline-building and reduce time-to-first-conversation with ideal clients.
+              </p>
+            </div>
+
+            {/* Sourcing Templates & Components */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Sourcing Templates &amp; Components for Projects</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Identifying and integrating best-in-class UI components, design systems, and structural templates that reduce build time without sacrificing quality or brand alignment.
+              </p>
+            </div>
+
+            {/* UI Libraries & Components */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">UI Libraries &amp; Components</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Selecting and deploying component libraries such as shadcn/ui, Radix, and 21st.dev to deliver interfaces that communicate premium quality and elevate brand perception.
+              </p>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                {['21stdev 1.png', 'reactflowxyflow 1.png', 'v0-logo-dark 1.png'].map((img) => (
+                  <img key={img} src={`/${img}`} alt="" className="h-5 object-contain opacity-60" />
+                ))}
+              </div>
+            </div>
+
+            {/* Prototyping + Lead Magnet */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Prototyping + Lead Magnet</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Rapid prototyping of client-facing interfaces used as tangible proof-of-concept during acquisition — reducing sales friction and demonstrating capability before contract.
+              </p>
+            </div>
+
+            {/* Iteration & Refinement of Design */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Iteration &amp; Refinement of Design</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Systematic refinement cycles driven by stakeholder feedback, visual QA, and aesthetic judgment — converging on atelier-quality output before handover.
+              </p>
+            </div>
+
+            {/* Agentic Coding Tools */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Agentic Coding Tools</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Using AI-native development environments and agentic coding assistants to accelerate implementation, reduce context-switching, and maintain consistent code quality.
+              </p>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                {['claude-color 1.png', 'codex-color 1.png', 'cursor-2 1.png', 'gemini-color 1.png'].map((img) => (
+                  <img key={img} src={`/${img}`} alt="" className="h-5 object-contain opacity-60" />
+                ))}
+              </div>
+            </div>
+
+            {/* UI Generation Systems */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">UI Generation Systems</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                AI-assisted UI generation tools used to rapidly scaffold high-quality interface structures — then refined to production standard through manual design judgment.
+              </p>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                {['v0-logo-dark 2.png', 'icons8-visual-studio-code-480 1.png'].map((img) => (
+                  <img key={img} src={`/${img}`} alt="" className="h-5 object-contain opacity-60" />
+                ))}
+              </div>
+            </div>
+
+            {/* Webhooks, Automation, Workflows & Functionality */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Webhooks, Automation, Workflows &amp; Functionality</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Connecting systems via webhooks, no-code triggers, and automation logic to create functional, self-operating business workflows that reduce manual overhead.
+              </p>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                {['Apify_logo-white-safe_1 1.png', 'logo-light 1.png'].map((img) => (
+                  <img key={img} src={`/${img}`} alt="" className="h-5 object-contain opacity-60" />
+                ))}
+              </div>
+            </div>
+
+            {/* Determinism via self annealment */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Determinism via Self Annealment</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Building systems with self-correcting logic and deterministic outputs — iterative refinement that converges on reliable, repeatable results independent of operator variance.
+              </p>
+            </div>
+
+            {/* Saved Time & Top of Mind */}
+            <div className="space-y-3 border border-border/40 rounded-xl p-5 bg-card/30">
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">Saved Time &amp; Top of Mind</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Automation and systematic delivery that recovers billable time, reduces cognitive overhead, and keeps Areculateir present in the client's daily operational context.
+              </p>
+            </div>
+
+          </div>
+          {/* ── End expanded methodology grid ────────────────────────── */}
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {workflows.map((workflow) => (
