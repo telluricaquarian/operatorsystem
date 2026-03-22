@@ -95,17 +95,13 @@ export function ProjectsPanel() {
                   </div>
                 </CardHeader>
                 {project.tags.length > 0 && (
-                  <CardContent className="pt-0">
-                    <div className="flex flex-wrap gap-1.5">
+                  <CardContent className="pt-4">
+                    <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <Badge
                           key={tag}
                           variant="outline"
-                          className={
-                            project.name === 'AvantSavant'
-                              ? 'text-xs rounded-full border-orange-500/40 text-orange-400 bg-orange-500/5'
-                              : 'text-xs rounded-full border-border/60 text-muted-foreground'
-                          }
+                          className="text-xs rounded-full border-orange-500/40 text-orange-400 bg-orange-500/10"
                         >
                           {tag}
                         </Badge>
