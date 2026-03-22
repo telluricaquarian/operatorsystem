@@ -39,7 +39,7 @@ const projectDetails: Record<string, ProjectDetail> = {
     id: '7',
     name: 'Areculateir',
     subtitle: 'Agentic Infrastructure',
-    image: '/aclrr77.png',
+    image: '/aclr77.png',
     description:
       'Agentic systems, workflow infrastructure, and high-leverage automation architecture for modern digital operations.',
     status: 'Active',
@@ -150,7 +150,7 @@ export function ProjectsPanel() {
                 <>
                   <div className="absolute inset-0 z-0">
                     <img
-                      src="/aclrr77.png"
+                      src="/aclr77.png"
                       alt="Areculateir background"
                       className="w-full h-full object-cover object-center blur-[1.5px] scale-[1.08] brightness-75 contrast-110 transition-all duration-500"
                     />
