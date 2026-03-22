@@ -163,7 +163,7 @@ const methodGrid = [
   {
     id: 'mg-4',
     title: 'Sourcing Templates & Components for Projects',
-    logos: ['v0-logo-dark 1.png', '21stdev 1.png', 'reactflowxyflow 1.png', 'logo.adddd611 1.png'],
+    logos: ['v0-logo-dark 1.png', '21stdev 1.png', 'reactflowxyflow 1.png', 'logo-light 1.png'],
     body: null,
     bullets: null,
   },
