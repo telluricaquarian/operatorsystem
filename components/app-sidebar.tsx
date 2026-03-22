@@ -22,6 +22,7 @@ import {
   Phone,
   Plug,
   Bot,
+  Target,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -69,6 +70,11 @@ const menuItems = [
     title: 'Agentic Flows',
     icon: Workflow,
     id: 'agentic-flows',
+  },
+  {
+    title: 'Client Acquisition',
+    icon: Target,
+    id: 'client-acquisition',
   },
 ]
 
