@@ -50,6 +50,20 @@ const projectDetails: Record<string, ProjectDetail> = {
     tooling: ['Claude', 'V0', 'Vercel'],
     siteUrl: 'https://www.areculateir.com',
   },
+  '8': {
+    id: '8',
+    name: 'SD with Kenneth',
+    subtitle: 'Personal Brand',
+    image: '/sdwithkennethbackground.png',
+    description:
+      'A personal brand and education platform designed to package mindset, learning, and self-development into a high-trust digital experience.',
+    status: 'Active',
+    stack: ['TypeScript'],
+    frameworks: ['Next.js', 'React'],
+    uiLibraries: ['shadcn/ui', 'Tailwind CSS'],
+    tooling: ['Claude', 'V0', 'Vercel'],
+    siteUrl: 'https://sdwithkenneth.vercel.app',
+  },
   '4': {
     id: '4',
     name: 'IdeationStation',
@@ -148,6 +162,19 @@ export function ProjectsPanel() {
                     <img
                       src="/aclr77.png"
                       alt="Areculateir background"
+                      className="w-full h-full object-cover object-center blur-[1.5px] scale-[1.08] brightness-75 contrast-110 transition-all duration-500"
+                    />
+                  </div>
+                  <div className="absolute inset-0 z-10 bg-black/40" />
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
+                </>
+              )}
+              {project.name === 'SD with Kenneth' && (
+                <>
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src="/sdwithkennethbackground.png"
+                      alt="SD with Kenneth background"
                       className="w-full h-full object-cover object-center blur-[1.5px] scale-[1.08] brightness-75 contrast-110 transition-all duration-500"
                     />
                   </div>

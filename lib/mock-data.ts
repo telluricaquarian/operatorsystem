@@ -200,6 +200,14 @@ export const mockProjects: Project[] = [
     outputs: [],
   },
   {
+    id: '8',
+    name: 'SD with Kenneth',
+    type: 'generic',
+    tags: ['Personal Brand', 'Education'],
+    lastUpdated: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3),
+    outputs: [],
+  },
+  {
     id: '6',
     name: 'Negentropic Workflows',
     type: 'generic',
