@@ -15,6 +15,8 @@ import {
   Home,
   Layers,
   Target,
+  Palette,
+  BookMarked,
 } from 'lucide-react'
 import {
   Card,
@@ -41,6 +43,11 @@ const socialMediaTemplates = [
   { id: 'sm-1', name: 'Social Post Template',    icon: MessageSquare, description: 'Reusable post structure for promotional and educational content' },
   { id: 'sm-2', name: 'Carousel Template',       icon: LayoutGrid,    description: 'Multi-slide content structure for social storytelling and offers' },
   { id: 'sm-3', name: 'Outreach DM Template',    icon: Send,          description: 'Short-form direct message templates for lead generation and follow-up' },
+]
+
+const brandingTemplates = [
+  { id: 'br-1', name: 'Brand Identity Template',   icon: Palette,     description: 'Structured framework for defining visual identity, typography, color systems, and brand tone' },
+  { id: 'br-2', name: 'Brand Guidelines Template', icon: BookMarked,  description: 'Comprehensive brand system documentation for consistent design, messaging, and implementation' },
 ]
 
 const webDesignTemplates = [
@@ -165,6 +172,42 @@ export function TemplatesPanel({ onSelectTemplate }: TemplatesPanelProps) {
                     </Button>
                     <Button variant="ghost" size="sm" className="h-7 gap-1.5 text-xs text-muted-foreground hover:text-foreground ml-auto" onClick={() => handleOpenScript(template.name)}>
                       <Code2 className="size-3" />Automation
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Branding Templates */}
+        <div className="mt-10">
+          <h2 className="text-lg font-semibold tracking-tight mb-1">Branding Templates</h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Reusable templates for brand identity, visual systems, and positioning assets
+          </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            {brandingTemplates.map((template) => (
+              <Card
+                key={template.id}
+                className="group border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30"
+              >
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
+                      <template.icon className="size-5 text-primary" />
+                    </div>
+                    <CardTitle className="text-base">{template.name}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0 space-y-4">
+                  <CardDescription className="text-sm">{template.description}</CardDescription>
+                  <div className="flex items-center gap-2 border-t border-border/40 pt-3">
+                    <Button variant="outline" size="sm" className="h-7 gap-1.5 text-xs border-border/50 hover:border-primary/40" onClick={() => handleGenerateDocument(template.name)}>
+                      <FileOutput className="size-3" />Generate
+                    </Button>
+                    <Button variant="ghost" size="sm" className="h-7 gap-1.5 text-xs text-muted-foreground hover:text-foreground" onClick={() => handleViewStructure(template.name)}>
+                      <Eye className="size-3" />Structure
                     </Button>
                   </div>
                 </CardContent>
