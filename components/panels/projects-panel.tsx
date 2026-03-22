@@ -29,11 +29,11 @@ export function ProjectsPanel() {
       </div>
 
       <ScrollArea className="flex-1">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {mockProjects.map((project) => (
             <Card
               key={project.id}
-              className="relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 cursor-pointer"
+              className="relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 cursor-pointer min-h-[240px]"
             >
               {project.name === 'IdeationStation' && (
                 <>
@@ -41,10 +41,10 @@ export function ProjectsPanel() {
                     <img
                       src="/ideationstationbackground.png"
                       alt="IdeationStation background"
-                      className="w-full h-full object-cover blur-[1.5px] scale-105 brightness-75 contrast-110 transition-all duration-500"
+                      className="w-full h-full object-cover object-center blur-[1.5px] scale-[1.08] brightness-75 contrast-110 transition-all duration-500"
                     />
                   </div>
-                  <div className="absolute inset-0 z-10 bg-black/20" />
+                  <div className="absolute inset-0 z-10 bg-black/40" />
                   <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
                 </>
               )}
@@ -54,10 +54,10 @@ export function ProjectsPanel() {
                     <img
                       src="/avantbackground.png"
                       alt="AvantSavant background"
-                      className="w-full h-full object-cover blur-[1.5px] scale-105 brightness-75 contrast-110 transition-all duration-500"
+                      className="w-full h-full object-cover object-center blur-[1.5px] scale-[1.08] brightness-75 contrast-110 transition-all duration-500"
                     />
                   </div>
-                  <div className="absolute inset-0 z-10 bg-black/20" />
+                  <div className="absolute inset-0 z-10 bg-black/40" />
                   <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
                 </>
               )}
@@ -67,10 +67,10 @@ export function ProjectsPanel() {
                     <img
                       src="/negentropicbackground.png"
                       alt="Negentropic background"
-                      className="w-full h-full object-cover blur-[1.5px] scale-105 brightness-75 contrast-110 transition-all duration-500"
+                      className="w-full h-full object-cover object-center blur-[1.5px] scale-[1.08] brightness-75 contrast-110 transition-all duration-500"
                     />
                   </div>
-                  <div className="absolute inset-0 z-10 bg-black/20" />
+                  <div className="absolute inset-0 z-10 bg-black/40" />
                   <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
                 </>
               )}
@@ -119,7 +119,7 @@ export function ProjectsPanel() {
 
           {/* Add New Project Card */}
           <Card className="border-dashed border-border/50 bg-transparent cursor-pointer transition-all hover:border-primary/50 hover:bg-card/30">
-            <CardContent className="flex h-full min-h-[140px] flex-col items-center justify-center gap-2">
+            <CardContent className="flex h-full min-h-[240px] flex-col items-center justify-center gap-2">
               <div className="flex size-10 items-center justify-center rounded-full bg-secondary/50">
                 <Plus className="size-5 text-muted-foreground" />
               </div>
