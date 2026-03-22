@@ -141,7 +141,7 @@ const methodGrid = [
   {
     id: 'mg-1',
     title: 'Web Scraping & Client Acquisition',
-    logos: ['Apify_logo-white-safe_1 1.png', 'logo-light 1.png'],
+    logos: ['Apify_logo-white-safe_1 1.png', 'apollo.png'],
     body: null,
     bullets: null,
   },
