@@ -176,6 +176,14 @@ export function generateMockOutput(command: string): OutputItem {
 
 export const mockProjects: Project[] = [
   {
+    id: '7',
+    name: 'Areculateir',
+    type: 'generic',
+    tags: ['Agentic Infrastructure', 'System Layer'],
+    lastUpdated: new Date(),
+    outputs: [],
+  },
+  {
     id: '4',
     name: 'IdeationStation',
     type: 'generic',

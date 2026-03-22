@@ -35,6 +35,19 @@ interface ProjectDetail {
 }
 
 const projectDetails: Record<string, ProjectDetail> = {
+  '7': {
+    id: '7',
+    name: 'Areculateir',
+    subtitle: 'Agentic Infrastructure',
+    image: '/aclrr77.png',
+    description:
+      'Agentic systems, workflow infrastructure, and high-leverage automation architecture for modern digital operations.',
+    status: 'Active',
+    stack: ['TypeScript'],
+    frameworks: ['Next.js', 'React'],
+    uiLibraries: ['shadcn/ui', 'Tailwind CSS'],
+    tooling: ['Claude', 'V0', 'Vercel'],
+  },
   '4': {
     id: '4',
     name: 'IdeationStation',
@@ -124,9 +137,28 @@ export function ProjectsPanel() {
           {mockProjects.map((project) => (
             <Card
               key={project.id}
-              onClick={() => setOpenId(project.id)}
+              onClick={() => {
+                if (project.name === 'Areculateir') {
+                  window.open('https://www.areculateir.com', '_blank', 'noopener,noreferrer')
+                } else {
+                  setOpenId(project.id)
+                }
+              }}
               className="relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all hover:border-primary/30 cursor-pointer min-h-[240px]"
             >
+              {project.name === 'Areculateir' && (
+                <>
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src="/aclrr77.png"
+                      alt="Areculateir background"
+                      className="w-full h-full object-cover object-center blur-[1.5px] scale-[1.08] brightness-75 contrast-110 transition-all duration-500"
+                    />
+                  </div>
+                  <div className="absolute inset-0 z-10 bg-black/40" />
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
+                </>
+              )}
               {project.name === 'IdeationStation' && (
                 <>
                   <div className="absolute inset-0 z-0">
