@@ -50,6 +50,20 @@ const projectDetails: Record<string, ProjectDetail> = {
     tooling: ['Claude', 'V0', 'Vercel'],
     siteUrl: 'https://www.areculateir.com',
   },
+  '9': {
+    id: '9',
+    name: 'TheThinkingSpirit',
+    subtitle: 'Philosophy',
+    image: '/thethinkingspiritbackground.png',
+    description:
+      'A philosophy-driven digital platform focused on clarity of thought, mental models, and structured understanding of complex ideas.',
+    status: 'Active',
+    stack: ['TypeScript'],
+    frameworks: ['Next.js', 'React'],
+    uiLibraries: ['shadcn/ui', 'Tailwind CSS'],
+    tooling: ['Claude', 'V0', 'Vercel'],
+    siteUrl: 'https://thethinkingspirit.vercel.app',
+  },
   '8': {
     id: '8',
     name: 'SD with Kenneth',
@@ -162,6 +176,19 @@ export function ProjectsPanel() {
                     <img
                       src="/aclr77.png"
                       alt="Areculateir background"
+                      className="w-full h-full object-cover object-center blur-[1.5px] scale-[1.08] brightness-75 contrast-110 transition-all duration-500"
+                    />
+                  </div>
+                  <div className="absolute inset-0 z-10 bg-black/40" />
+                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/70 to-black/20" />
+                </>
+              )}
+              {project.name === 'TheThinkingSpirit' && (
+                <>
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src="/thethinkingspiritbackground.png"
+                      alt="TheThinkingSpirit background"
                       className="w-full h-full object-cover object-center blur-[1.5px] scale-[1.08] brightness-75 contrast-110 transition-all duration-500"
                     />
                   </div>
