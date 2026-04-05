@@ -9,17 +9,14 @@ import { OperatorDock } from '@/components/operator/operator-dock'
 const DOCK_GROUPS = [
   {
     items: [
-      { src: '/roundedfavicon.png',         alt: 'Areculateir',    label: 'Areculateir' },
-      { src: '/aablackgtier.png',           alt: 'Black Tier',     label: 'Black Tier' },
-      { src: '/bluetierchad.png',           alt: 'Blue Tier',      label: 'Blue Tier' },
+      { src: '/roundedfavicon.png',         alt: 'Areculateir',          label: 'Areculateir' },
+      { src: '/roundedservicesfavicon.png', alt: 'Areculateir Services', label: 'Areculateir Services' },
     ],
   },
   {
     items: [
-      { src: '/claude-color 1.png',         alt: 'Claude',         label: 'Claude' },
-      { src: '/gemini-color 1.png',         alt: 'Gemini',         label: 'Gemini' },
-      { src: '/codex-color 1.png',          alt: 'Codex',          label: 'Codex' },
-      { src: '/cursor-2 1.png',             alt: 'Cursor',         label: 'Cursor IDE' },
+      { src: '/bluetierchad.png',           alt: 'Blue Tier',            label: 'Blue Tier' },
+      { src: '/yellowaafav.png',            alt: 'AA Yellow',            label: 'AA Yellow' },
     ],
   },
 ]
