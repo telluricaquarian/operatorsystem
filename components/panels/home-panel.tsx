@@ -2,6 +2,27 @@
 
 import Image from 'next/image'
 import { Wrench } from 'lucide-react'
+import { OperatorDock } from '@/components/operator/operator-dock'
+
+// ─── Dock configuration ───────────────────────────────────────────────────────
+
+const DOCK_GROUPS = [
+  {
+    items: [
+      { src: '/roundedfavicon.png',         alt: 'Areculateir',    label: 'Areculateir' },
+      { src: '/aablackgtier.png',           alt: 'Black Tier',     label: 'Black Tier' },
+      { src: '/bluetierchad.png',           alt: 'Blue Tier',      label: 'Blue Tier' },
+    ],
+  },
+  {
+    items: [
+      { src: '/claude-color 1.png',         alt: 'Claude',         label: 'Claude' },
+      { src: '/gemini-color 1.png',         alt: 'Gemini',         label: 'Gemini' },
+      { src: '/codex-color 1.png',          alt: 'Codex',          label: 'Codex' },
+      { src: '/cursor-2 1.png',             alt: 'Cursor',         label: 'Cursor IDE' },
+    ],
+  },
+]
 
 export function HomePanel() {
   return (
@@ -137,6 +158,9 @@ export function HomePanel() {
           — Naval Ravikant
         </p>
       </div>
+
+      {/* Desktop-only floating dock — bottom-right corner */}
+      <OperatorDock groups={DOCK_GROUPS} />
 
     </div>
   )
